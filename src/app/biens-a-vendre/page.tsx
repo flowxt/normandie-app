@@ -455,16 +455,15 @@ export default function BiensAVendrePage() {
               Recevez les nouvelles annonces en avant-première et nos conseils
               exclusifs pour réussir votre projet immobilier en Normandie
             </p>
-            <Button
-              href="/contact"
-              variant="accent"
-              className="bg-white text-blue-600 hover:bg-blue-50 shadow-xl"
+            <button
+              onClick={() => window.location.href = '/contact'}
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-600 font-bold text-base rounded-xl shadow-xl hover:shadow-2xl hover:bg-blue-50 transition-all hover:scale-105"
             >
               Je m'inscris gratuitement
-              <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </Button>
+            </button>
           </motion.div>
         </div>
       </section>
