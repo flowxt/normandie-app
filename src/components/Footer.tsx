@@ -1,0 +1,296 @@
+import Link from "next/link";
+import Image from "next/image";
+
+export default function Footer() {
+  const navigation = {
+    services: [
+      { name: "Estimation immobilière", href: "/nos-services" },
+      { name: "Rénovation énergétique", href: "/nos-services" },
+      { name: "Valorisation DPE", href: "/nos-services" },
+    ],
+    pages: [
+      { name: "Notre histoire", href: "/a-propos" },
+      { name: "Biens à vendre", href: "/biens-a-vendre" },
+      { name: "Contact", href: "/contact" },
+    ],
+  };
+
+  return (
+    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+        {/* Section principale du footer */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+          {/* À propos */}
+          <div className="space-y-4">
+            <div className="mb-4">
+              <Image
+                src="/eXp_Logo_Black.png"
+                alt="eXp France"
+                width={120}
+                height={40}
+                className="h-10 w-auto brightness-0 invert"
+              />
+            </div>
+            <h3 className="text-lg font-bold text-white">eXp France - Normandie</h3>
+            <p className="text-sm text-gray-400 leading-relaxed">
+              Votre partenaire immobilier de confiance pour la vente, l'achat et la
+              valorisation de biens en Normandie.
+            </p>
+            <div className="pt-2">
+              <a
+                href="https://www.expfrance.fr/fr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 transition-colors text-sm font-semibold group"
+              >
+                <span>Découvrir eXp France</span>
+                <svg
+                  className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          {/* Nos services */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-bold text-white">Nos services</h3>
+            <ul className="space-y-3">
+              {navigation.services.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="text-sm text-gray-400 hover:text-white transition-colors flex items-center group"
+                  >
+                    <svg
+                      className="w-4 h-4 mr-2 text-blue-500 group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            {/* Partenaire ENRLUX */}
+            <div className="mt-6 pt-6 border-t border-gray-700">
+              <h4 className="text-sm font-semibold text-white mb-3">Notre partenaire</h4>
+              <a
+                href="https://www.enrlux-france.fr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 transition-colors text-sm font-semibold group"
+              >
+                <svg
+                  className="w-4 h-4 text-green-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+                <span>ENRLUX France</span>
+                <svg
+                  className="w-3 h-3 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </a>
+              <p className="text-xs text-gray-500 mt-2">Rénovation énergétique</p>
+            </div>
+          </div>
+
+          {/* Liens rapides */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-bold text-white">Liens rapides</h3>
+            <ul className="space-y-3">
+              {navigation.pages.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="text-sm text-gray-400 hover:text-white transition-colors flex items-center group"
+                  >
+                    <svg
+                      className="w-4 h-4 mr-2 text-blue-500 group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-bold text-white">Contact</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start">
+                <svg
+                  className="w-5 h-5 mr-3 text-blue-500 flex-shrink-0 mt-0.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                <div>
+                  <p className="text-sm text-gray-400">
+                    Normandie
+                    <br />
+                    Calvados, Eure, Manche, Orne, Seine-Maritime
+                  </p>
+                </div>
+              </li>
+              <li className="flex items-center">
+                <svg
+                  className="w-5 h-5 mr-3 text-blue-500 flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+                <a
+                  href="mailto:contact@exp-normandie.fr"
+                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                >
+                  contact@exp-normandie.fr
+                </a>
+              </li>
+              <li className="flex items-center">
+                <svg
+                  className="w-5 h-5 mr-3 text-blue-500 flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+                <a
+                  href="tel:+33662155757"
+                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                >
+                  06 62 15 57 57
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Séparateur */}
+        <div className="mt-12 border-t border-gray-700 pt-8">
+          {/* Zone d'expertise */}
+          <div className="mb-6 text-center">
+            <p className="text-sm font-semibold text-amber-400 mb-3">
+              Zone d'expertise - Normandie
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {[
+                "Caen",
+                "Rouen",
+                "Le Havre",
+                "Cherbourg",
+                "Évreux",
+                "Alençon",
+                "Lisieux",
+                "Deauville",
+              ].map((ville) => (
+                <span
+                  key={ville}
+                  className="inline-block px-4 py-2 bg-gray-800/50 text-gray-300 text-xs font-medium rounded-full border border-gray-700 hover:border-blue-500 hover:text-white transition-colors"
+                >
+                  {ville}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Copyright et mentions */}
+          <div className="text-center space-y-2">
+            <p className="text-xs text-gray-500">
+              Cellule indépendante du réseau eXp France spécialisée en Normandie
+            </p>
+            <p className="text-xs text-gray-500">
+              &copy; {new Date().getFullYear()} eXp France - Normandie. Tous droits
+              réservés.
+            </p>
+            <p className="text-xs text-gray-500 mt-3">
+              Site créé par{" "}
+              <a
+                href="https://www.atypikcode.fr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 font-semibold transition-colors"
+              >
+                atypikCode
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
