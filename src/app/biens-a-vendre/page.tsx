@@ -58,7 +58,7 @@ export default function BiensAVendrePage() {
   return (
     <>
       {/* Header avec parallaxe */}
-      <section ref={headerRef} className="relative h-screen overflow-hidden">
+      <section ref={headerRef} className="relative min-h-screen overflow-hidden pt-24 sm:pt-20">
         <motion.div style={{ y }} className="absolute inset-0">
           <Image
             src="/normandie.jpg"
@@ -236,7 +236,7 @@ export default function BiensAVendrePage() {
                 </svg>
                 Estimation + DPE Gratuit
               </Button>
-              <Button href="/nos-services" variant="outline" className="text-lg px-10 py-4">
+              <Button href="/nos-services" variant="outline-dark" className="text-lg px-10 py-4">
                 Découvrir nos services
               </Button>
             </div>
@@ -337,7 +337,7 @@ export default function BiensAVendrePage() {
             <p className="text-gray-600 text-lg mb-6">
               Et bien d'autres villes en Normandie : Lisieux, Alençon, Dieppe, Fécamp...
             </p>
-            <Button href="/contact" variant="outline">
+            <Button href="/contact" variant="outline-dark">
               Contactez-nous pour votre secteur
             </Button>
           </motion.div>
@@ -423,7 +423,7 @@ export default function BiensAVendrePage() {
                 <Button
                   href="/nos-services"
                   variant="outline"
-                  className="text-lg px-10 py-5 border-2 border-white/40 hover:bg-white/10 text-white"
+                  className="text-lg px-10 py-5"
                 >
                   Nos services
                 </Button>

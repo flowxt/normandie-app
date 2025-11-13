@@ -2,7 +2,7 @@ import Link from "next/link";
 
 interface ButtonProps {
   href: string;
-  variant?: "primary" | "secondary" | "accent" | "outline";
+  variant?: "primary" | "secondary" | "accent" | "outline" | "outline-dark";
   children: React.ReactNode;
   className?: string;
 }
@@ -22,6 +22,8 @@ export default function Button({
     accent: "bg-amber-500 text-white hover:bg-amber-600",
     outline:
       "border-2 border-white text-white hover:bg-white hover:text-blue-600",
+    "outline-dark":
+      "border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white bg-white",
   };
 
   return (

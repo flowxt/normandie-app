@@ -164,7 +164,7 @@ export default function NosServicesPage() {
   return (
     <>
       {/* Header avec parallaxe */}
-      <section ref={headerRef} className="relative h-[70vh] overflow-hidden">
+      <section ref={headerRef} className="relative min-h-[70vh] overflow-hidden pt-24 sm:pt-20">
         <motion.div style={{ scale }} className="absolute inset-0">
           <Image
             src="/normandie.jpg"
@@ -209,7 +209,7 @@ export default function NosServicesPage() {
                 >
                   <svg className="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
+                </svg>
                   Estimation + DPE Gratuit
                 </Button>
               </div>
@@ -312,7 +312,7 @@ export default function NosServicesPage() {
                           <div className={`flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-br ${colors.gradient} flex items-center justify-center`}>
                             <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                            </svg>
+                </svg>
                           </div>
                           <span className="text-gray-700 font-medium">{feature}</span>
                         </motion.div>
@@ -326,7 +326,7 @@ export default function NosServicesPage() {
                       En savoir plus
                       <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
+                </svg>
                     </Button>
                   </div>
                 </motion.div>
@@ -440,8 +440,8 @@ export default function NosServicesPage() {
               </Button>
               <Button
                 href="tel:+33123456789"
-                variant="outline"
-                className="w-full sm:w-auto text-lg px-12 py-6 border-2"
+                variant="outline-dark"
+                className="w-full sm:w-auto text-lg px-12 py-6"
               >
                 <svg className="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />

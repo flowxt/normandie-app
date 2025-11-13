@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section avec image Normandie */}
-      <section ref={heroRef} className="relative h-screen overflow-hidden">
+      <section ref={heroRef} className="relative min-h-screen overflow-hidden pt-24 sm:pt-20">
         {/* Image de fond avec parallaxe */}
         <motion.div style={{ y }} className="absolute inset-0">
           <Image
@@ -120,7 +120,7 @@ export default function Home() {
               <Button
                 href="#services"
                 variant="outline"
-                className="w-full sm:w-auto text-lg px-10 py-6 border-2 border-white/40 hover:bg-white/10"
+                className="w-full sm:w-auto text-lg px-10 py-6"
               >
                 Découvrir nos services
               </Button>
@@ -270,17 +270,17 @@ export default function Home() {
                 icon: (
                   <svg
                     className="h-8 w-8"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                       strokeWidth={2}
                       d="M13 10V3L4 14h7v7l9-11h-7z"
-                    />
-                  </svg>
+                  />
+                </svg>
                 ),
                 title: "Rénovation énergétique",
                 description:
@@ -402,8 +402,8 @@ export default function Home() {
                 </div>
               </motion.div>
             ))}
-          </div>
-        </div>
+              </div>
+            </div>
       </section>
 
       {/* CTA Final */}
@@ -456,7 +456,7 @@ export default function Home() {
               <Button
                 href="/nos-services"
                 variant="outline"
-                className="w-full sm:w-auto text-lg px-12 py-6 border-2 border-white/40 hover:bg-white/10"
+                className="w-full sm:w-auto text-lg px-12 py-6"
               >
                 Découvrir tous nos services
               </Button>
