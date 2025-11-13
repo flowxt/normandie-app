@@ -72,7 +72,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Header avec parallaxe */}
-      <section ref={headerRef} className="relative min-h-[60vh] overflow-hidden pt-24 sm:pt-20">
+      <section ref={headerRef} className="relative min-h-[60vh] overflow-hidden pt-32">
         <motion.div style={{ scale }} className="absolute inset-0">
           <Image
             src="/normandie.jpg"

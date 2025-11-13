@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section avec image Normandie */}
-      <section ref={heroRef} className="relative min-h-screen overflow-hidden pt-24 sm:pt-20">
+      <section ref={heroRef} className="relative min-h-screen overflow-hidden pt-32">
         {/* Image de fond avec parallaxe */}
         <motion.div style={{ y }} className="absolute inset-0">
           <Image
