@@ -48,8 +48,8 @@ export default function Home() {
               className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full mb-8 border border-white/30"
             >
               <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2998a6] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-[#2998a6]"></span>
               </span>
               <span className="text-white font-semibold text-sm tracking-wide">
                 eXp France • Votre expert immobilier en Normandie
@@ -65,7 +65,7 @@ export default function Home() {
             >
               Vendez votre bien
               <br />
-              <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#2998a6] via-[#0d6c8a] to-[#2998a6] bg-clip-text text-transparent">
                 plus vite, plus cher
               </span>
             </motion.h1>
@@ -100,7 +100,7 @@ export default function Home() {
               <Button
                 href="/contact"
                 variant="accent"
-                className="w-full sm:w-auto text-lg px-10 py-6 shadow-2xl hover:shadow-yellow-500/50"
+                className="w-full sm:w-auto text-lg px-10 py-6 shadow-2xl hover:shadow-accent-500/50"
               >
                 <svg
                   className="w-6 h-6 mr-2"
@@ -233,11 +233,11 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide mb-4 block">
+            <span className="text-[#0d6c8a] font-semibold text-sm uppercase tracking-wide mb-4 block">
               Notre expertise
             </span>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Un accompagnement <span className="text-blue-600">complet</span>
+              Un accompagnement <span className="bg-gradient-to-r from-[#1e3771] to-[#2998a6] bg-clip-text text-transparent">complet</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               De l'estimation à la signature, nous vous guidons à chaque étape
@@ -385,12 +385,12 @@ export default function Home() {
               >
                 <div className="h-full bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border border-gray-100">
                   {service.badge && (
-                    <div className="absolute -top-3 -right-3 bg-gradient-to-r from-green-600 to-green-700 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg flex items-center gap-1">
+                    <div className="absolute -top-3 -right-3 bg-gradient-to-r from-[#2998a6] to-[#0d6c8a] text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg flex items-center gap-1">
                       <span>🌿</span>
                       <span>{service.badge}</span>
                     </div>
                   )}
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-2xl mb-6 group-hover:scale-110 transition-transform">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#1e3771] to-[#2998a6] text-white rounded-2xl mb-6 group-hover:scale-110 transition-transform">
                     {service.icon}
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
@@ -407,14 +407,12 @@ export default function Home() {
       </section>
 
       {/* CTA Final */}
-      <section className="relative py-32 overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-900">
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            }}
-          />
+      <section className="relative py-32 overflow-hidden bg-gradient-to-br from-[#1e3771] via-[#0d6c8a] to-[#06465c]">
+        {/* Bulles décoratives floues pour plus de profondeur */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#2998a6] rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#0c233c] rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-[#2998a6]/50 rounded-full blur-2xl" />
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -427,7 +425,7 @@ export default function Home() {
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
               Prêt à valoriser votre bien ?
             </h2>
-            <p className="text-xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
               Obtenez une estimation gratuite et un diagnostic DPE offert. Découvrez
               comment augmenter la valeur de votre propriété en Normandie.
             </p>
@@ -436,7 +434,7 @@ export default function Home() {
               <Button
                 href="/contact"
                 variant="accent"
-                className="w-full sm:w-auto text-lg px-12 py-6 shadow-2xl hover:shadow-yellow-500/50"
+                className="w-full sm:w-auto text-lg px-12 py-6 shadow-2xl hover:shadow-accent-500/50"
               >
                 <svg
                   className="w-6 h-6 mr-2"
@@ -462,10 +460,10 @@ export default function Home() {
               </Button>
             </div>
 
-            <div className="mt-16 flex flex-wrap justify-center gap-8 items-center text-white/80">
+            <div className="mt-16 flex flex-wrap justify-center gap-8 items-center text-gray-300">
               <div className="flex items-center gap-2">
                 <svg
-                  className="w-6 h-6 text-green-400"
+                  className="w-6 h-6 text-[#2998a6]"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -475,11 +473,11 @@ export default function Home() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span>Réseau eXp France</span>
+                <span className="font-medium">Réseau eXp France</span>
               </div>
               <div className="flex items-center gap-2">
                 <svg
-                  className="w-6 h-6 text-green-400"
+                  className="w-6 h-6 text-[#2998a6]"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -489,11 +487,11 @@ export default function Home() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span>Partenaire ENRLUX France</span>
+                <span className="font-medium">Partenaire ENRLUX France</span>
               </div>
               <div className="flex items-center gap-2">
                 <svg
-                  className="w-6 h-6 text-green-400"
+                  className="w-6 h-6 text-[#2998a6]"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -503,7 +501,7 @@ export default function Home() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span>Aides de l'État jusqu'à 70%</span>
+                <span className="font-medium">Aides de l&apos;État jusqu&apos;à 70%</span>
               </div>
             </div>
           </motion.div>
@@ -550,14 +548,14 @@ function ScrollRevealSection({
 
   const themeColors = {
     blue: {
-      gradient: "from-blue-600 to-blue-700",
-      text: "text-blue-600",
-      bg: "bg-blue-50",
+      gradient: "from-[#1e3771] to-[#2998a6]",
+      text: "text-[#0d6c8a]",
+      bg: "bg-[#2998a6]/10",
     },
     green: {
-      gradient: "from-green-600 to-green-700",
-      text: "text-green-600",
-      bg: "bg-green-50",
+      gradient: "from-[#2998a6] to-[#0d6c8a]",
+      text: "text-[#2998a6]",
+      bg: "bg-[#2998a6]/10",
     },
   };
 

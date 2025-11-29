@@ -85,7 +85,7 @@ export default function Header() {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 hover:text-blue-600 transition-colors"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 hover:text-[#2998a6] transition-colors"
             onClick={() => {
               console.log("Menu button clicked, current state:", mobileMenuOpen);
               setMobileMenuOpen(!mobileMenuOpen);
@@ -127,8 +127,8 @@ export default function Header() {
               href={item.href}
               className={`text-sm font-semibold transition-colors ${
                 pathname === item.href
-                  ? "text-blue-600"
-                  : "text-gray-900 hover:text-blue-600"
+                  ? "text-[#0d6c8a]"
+                  : "text-gray-900 hover:text-[#2998a6]"
               }`}
             >
               {item.name}
@@ -138,7 +138,7 @@ export default function Header() {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link
             href="/contact"
-            className="rounded-lg bg-blue-600 px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 transition-colors"
+            className="rounded-lg bg-gradient-to-r from-[#1e3771] to-[#2998a6] px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:from-[#0c233c] hover:to-[#0d6c8a] transition-all"
           >
             Nous contacter
           </Link>
@@ -182,7 +182,7 @@ export default function Header() {
                     </span>
                     <button
                       type="button"
-                      className="rounded-full p-2 text-gray-500 hover:text-blue-600 hover:bg-gray-100/50 transition-all"
+                      className="rounded-full p-2 text-gray-500 hover:text-[#2998a6] hover:bg-gray-100/50 transition-all"
                       onClick={() => setMobileMenuOpen(false)}
                       aria-label="Fermer le menu"
                     >
@@ -210,8 +210,8 @@ export default function Header() {
                           href={item.href}
                           className={`group flex items-center justify-between rounded-xl px-4 py-3.5 text-base font-semibold transition-all ${
                             pathname === item.href
-                              ? "bg-blue-600 text-white shadow-lg shadow-blue-600/30"
-                              : "text-gray-700 hover:bg-gray-100/70 hover:text-blue-600"
+                              ? "bg-gradient-to-r from-[#1e3771] to-[#2998a6] text-white shadow-lg shadow-[#2998a6]/30"
+                              : "text-gray-700 hover:bg-gray-100/70 hover:text-[#2998a6]"
                           }`}
                           onClick={() => setMobileMenuOpen(false)}
                         >
@@ -239,7 +239,7 @@ export default function Header() {
                   >
                     <Link
                       href="/contact"
-                      className="flex items-center justify-center gap-2 w-full rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 px-6 py-4 text-base font-bold text-white shadow-lg shadow-blue-600/30 hover:shadow-xl hover:shadow-blue-600/40 transition-all hover:scale-[1.02]"
+                      className="flex items-center justify-center gap-2 w-full rounded-xl bg-gradient-to-r from-[#1e3771] to-[#2998a6] px-6 py-4 text-base font-bold text-white shadow-lg shadow-[#2998a6]/30 hover:shadow-xl hover:shadow-[#2998a6]/40 transition-all hover:scale-[1.02]"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

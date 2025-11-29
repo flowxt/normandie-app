@@ -68,7 +68,7 @@ export default function BiensAVendrePage() {
             priority
             quality={100}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/80 via-blue-800/60 to-blue-900/85" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1e3771]/80 via-[#0d6c8a]/60 to-[#06465c]/85" />
         </motion.div>
 
         <motion.div
@@ -87,7 +87,7 @@ export default function BiensAVendrePage() {
               <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 leading-tight">
                 Trouvez votre bien
                 <br />
-                <span className="bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#2998a6] via-[#0d6c8a] to-[#2998a6] bg-clip-text text-transparent">
                   en Normandie
                 </span>
               </h1>
@@ -103,7 +103,7 @@ export default function BiensAVendrePage() {
                 <Button
                   href="#biens"
                   variant="accent"
-                  className="text-lg px-10 py-5 shadow-2xl hover:shadow-yellow-500/50"
+                  className="text-lg px-10 py-5 shadow-2xl hover:shadow-accent-500/50"
                 >
                   Découvrir nos biens
                   <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -151,7 +151,7 @@ export default function BiensAVendrePage() {
                   rotate: [0, 10, -10, 0],
                 }}
                 transition={{ duration: 4, repeat: Infinity }}
-                className="inline-flex items-center justify-center w-28 h-28 bg-gradient-to-br from-blue-600 via-cyan-600 to-blue-700 rounded-3xl shadow-2xl"
+                className="inline-flex items-center justify-center w-28 h-28 bg-gradient-to-br from-[#1e3771] via-[#2998a6] to-[#0d6c8a] rounded-3xl shadow-2xl"
               >
                 <svg className="w-16 h-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
@@ -160,13 +160,13 @@ export default function BiensAVendrePage() {
               <motion.div
                 animate={{ scale: [1, 1.3, 1], opacity: [0.5, 0, 0.5] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="absolute inset-0 bg-blue-400 rounded-3xl blur-2xl"
+                className="absolute inset-0 bg-[#2998a6] rounded-3xl blur-2xl"
               />
             </div>
 
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
               Nos biens arrivent{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#1e3771] to-[#2998a6] bg-clip-text text-transparent">
                 très bientôt
               </span>
             </h2>
@@ -182,7 +182,7 @@ export default function BiensAVendrePage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-blue-50 via-cyan-50 to-blue-50 rounded-3xl p-10 lg:p-14 shadow-xl border border-blue-100 mb-16"
+            className="bg-gradient-to-br from-[#1e3771]/5 via-[#2998a6]/10 to-[#2998a6]/15 rounded-3xl p-10 lg:p-14 shadow-xl border border-[#2998a6]/20 mb-16"
           >
             <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center">
               En attendant, profitez de nos services premium
@@ -218,7 +218,7 @@ export default function BiensAVendrePage() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ x: 5 }}
-                  className="flex items-start gap-4 bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-blue-100 shadow-sm hover:shadow-md transition-all"
+                  className="flex items-start gap-4 bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-[#2998a6]/20 shadow-sm hover:shadow-md transition-all"
                 >
                   <div className="text-4xl flex-shrink-0">{item.icon}</div>
                   <div>
@@ -277,11 +277,11 @@ export default function BiensAVendrePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide mb-4 block">
+            <span className="text-[#0d6c8a] font-semibold text-sm uppercase tracking-wide mb-4 block">
               Notre territoire
             </span>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Nos secteurs <span className="text-blue-600">d'intervention</span>
+              Nos secteurs <span className="bg-gradient-to-r from-[#1e3771] to-[#2998a6] bg-clip-text text-transparent">d'intervention</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Des villes dynamiques et recherchées à travers toute la Normandie
@@ -307,14 +307,14 @@ export default function BiensAVendrePage() {
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1e3771]/80 to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4">
                       <h3 className="text-2xl font-bold text-white mb-1">{ville.name}</h3>
                     </div>
                   </div>
                   <div className="p-6">
                     <p className="text-gray-600 mb-3">{ville.description}</p>
-                    <div className="flex items-center gap-2 text-blue-600 font-semibold text-sm">
+                    <div className="flex items-center gap-2 text-[#0d6c8a] font-semibold text-sm">
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                       </svg>
@@ -345,8 +345,14 @@ export default function BiensAVendrePage() {
       </section>
 
       {/* Section vous voulez vendre */}
-      <section className="py-32 bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-32 bg-gradient-to-br from-[#1e3771] via-[#0d6c8a] to-[#06465c] overflow-hidden">
+        {/* Bulles décoratives */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#2998a6] rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#0c233c] rounded-full blur-3xl" />
+          <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-[#2998a6]/50 rounded-full blur-2xl" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Image */}
             <motion.div
@@ -376,7 +382,7 @@ export default function BiensAVendrePage() {
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
                 Vous souhaitez vendre ?
               </h2>
-              <p className="text-xl text-blue-100 mb-8 leading-relaxed">
+              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
                 Confiez-nous la vente de votre propriété en Normandie et bénéficiez
                 de notre expertise locale, notre réseau international eXp et nos
                 solutions de rénovation énergétique.
@@ -399,7 +405,7 @@ export default function BiensAVendrePage() {
                     viewport={{ once: true }}
                     className="flex items-center gap-3"
                   >
-                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-br from-green-400 to-green-500 flex items-center justify-center">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-br from-[#2998a6] to-[#0d6c8a] flex items-center justify-center">
                       <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
@@ -413,7 +419,7 @@ export default function BiensAVendrePage() {
                 <Button
                   href="/contact"
                   variant="accent"
-                  className="text-lg px-10 py-5 shadow-2xl hover:shadow-yellow-500/50"
+                  className="text-lg px-10 py-5 shadow-2xl hover:shadow-accent-500/50"
                 >
                   <svg className="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -441,7 +447,7 @@ export default function BiensAVendrePage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-blue-600 to-cyan-600 rounded-3xl p-10 lg:p-14 text-center text-white shadow-2xl"
+            className="bg-gradient-to-br from-[#1e3771] to-[#2998a6] rounded-3xl p-10 lg:p-14 text-center text-white shadow-2xl"
           >
             <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl mb-6">
               <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -451,13 +457,13 @@ export default function BiensAVendrePage() {
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
               Soyez informé en priorité
             </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Recevez les nouvelles annonces en avant-première et nos conseils
               exclusifs pour réussir votre projet immobilier en Normandie
             </p>
             <button
               onClick={() => window.location.href = '/contact'}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-600 font-bold text-base rounded-xl shadow-xl hover:shadow-2xl hover:bg-blue-50 transition-all hover:scale-105"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#1e3771] font-bold text-base rounded-xl shadow-xl hover:shadow-2xl hover:bg-[#2998a6]/10 transition-all hover:scale-105"
             >
               Je m'inscris gratuitement
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

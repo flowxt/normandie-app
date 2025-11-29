@@ -16,8 +16,14 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+    <footer className="relative bg-gradient-to-br from-[#0c233c] via-[#1e3771] to-[#0c233c] overflow-hidden">
+      {/* Bulles décoratives */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-0 right-0 w-80 h-80 bg-[#2998a6] rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#0d6c8a] rounded-full blur-3xl" />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6 py-16 lg:px-8">
         {/* Section principale du footer */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* À propos */}
@@ -32,8 +38,8 @@ export default function Footer() {
               />
             </div>
             <h3 className="text-lg font-bold text-white">eXp France - Normandie</h3>
-            <p className="text-sm text-gray-400 leading-relaxed">
-              Votre partenaire immobilier de confiance pour la vente, l'achat et la
+            <p className="text-sm text-gray-300/80 leading-relaxed">
+              Votre partenaire immobilier de confiance pour la vente, l&apos;achat et la
               valorisation de biens en Normandie.
             </p>
             <div className="pt-2">
@@ -69,10 +75,10 @@ export default function Footer() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-sm text-gray-400 hover:text-white transition-colors flex items-center group"
+                    className="text-sm text-gray-300/80 hover:text-white transition-colors flex items-center group"
                   >
                     <svg
-                      className="w-4 h-4 mr-2 text-blue-500 group-hover:translate-x-1 transition-transform"
+                      className="w-4 h-4 mr-2 text-[#2998a6] group-hover:translate-x-1 transition-transform"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -91,16 +97,16 @@ export default function Footer() {
             </ul>
 
             {/* Partenaire ENRLUX */}
-            <div className="mt-6 pt-6 border-t border-gray-700">
+            <div className="mt-6 pt-6 border-t border-[#2998a6]/20">
               <h4 className="text-sm font-semibold text-white mb-3">Notre partenaire</h4>
               <a
                 href="https://www.enrlux-france.fr/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 transition-colors text-sm font-semibold group"
+                className="inline-flex items-center gap-2 text-[#2998a6] hover:text-[#2998a6]/80 transition-colors text-sm font-semibold group"
               >
                 <svg
-                  className="w-4 h-4 text-green-500"
+                  className="w-4 h-4 text-[#2998a6]"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -127,7 +133,7 @@ export default function Footer() {
                   />
                 </svg>
               </a>
-              <p className="text-xs text-gray-500 mt-2">Rénovation énergétique</p>
+              <p className="text-xs text-gray-400 mt-2">Rénovation énergétique</p>
             </div>
           </div>
 
@@ -139,10 +145,10 @@ export default function Footer() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-sm text-gray-400 hover:text-white transition-colors flex items-center group"
+                    className="text-sm text-gray-300/80 hover:text-white transition-colors flex items-center group"
                   >
                     <svg
-                      className="w-4 h-4 mr-2 text-blue-500 group-hover:translate-x-1 transition-transform"
+                      className="w-4 h-4 mr-2 text-[#2998a6] group-hover:translate-x-1 transition-transform"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -167,7 +173,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <svg
-                  className="w-5 h-5 mr-3 text-blue-500 flex-shrink-0 mt-0.5"
+                  className="w-5 h-5 mr-3 text-[#2998a6] shrink-0 mt-0.5"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -186,7 +192,7 @@ export default function Footer() {
                   />
                 </svg>
                 <div>
-                  <p className="text-sm text-gray-400">
+                  <p className="text-sm text-gray-300/80">
                     Normandie
                     <br />
                     Calvados, Eure, Manche, Orne, Seine-Maritime
@@ -195,7 +201,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <svg
-                  className="w-5 h-5 mr-3 text-blue-500 flex-shrink-0"
+                  className="w-5 h-5 mr-3 text-[#2998a6] shrink-0"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -209,14 +215,14 @@ export default function Footer() {
                 </svg>
                 <a
                   href="mailto:contact@exp-normandie.fr"
-                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                  className="text-sm text-gray-300/80 hover:text-white transition-colors"
                 >
                   contact@exp-normandie.fr
                 </a>
               </li>
               <li className="flex items-center">
                 <svg
-                  className="w-5 h-5 mr-3 text-blue-500 flex-shrink-0"
+                  className="w-5 h-5 mr-3 text-[#2998a6] shrink-0"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -230,7 +236,7 @@ export default function Footer() {
                 </svg>
                 <a
                   href="tel:+33662155757"
-                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                  className="text-sm text-gray-300/80 hover:text-white transition-colors"
                 >
                   06 62 15 57 57
                 </a>
@@ -240,11 +246,11 @@ export default function Footer() {
         </div>
 
         {/* Séparateur */}
-        <div className="mt-12 border-t border-gray-700 pt-8">
+        <div className="mt-12 border-t border-[#2998a6]/20 pt-8">
           {/* Zone d'expertise */}
           <div className="mb-6 text-center">
-            <p className="text-sm font-semibold text-amber-400 mb-3">
-              Zone d'expertise - Normandie
+            <p className="text-sm font-semibold text-[#2998a6] mb-3">
+              Zone d&apos;expertise - Normandie
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               {[
@@ -259,7 +265,7 @@ export default function Footer() {
               ].map((ville) => (
                 <span
                   key={ville}
-                  className="inline-block px-4 py-2 bg-gray-800/50 text-gray-300 text-xs font-medium rounded-full border border-gray-700 hover:border-blue-500 hover:text-white transition-colors"
+                  className="inline-block px-4 py-2 bg-[#2998a6]/10 text-gray-300 text-xs font-medium rounded-full border border-[#2998a6]/30 hover:border-[#2998a6] hover:text-white hover:bg-[#2998a6]/20 transition-all cursor-default"
                 >
                   {ville}
                 </span>
@@ -269,20 +275,20 @@ export default function Footer() {
 
           {/* Copyright et mentions */}
           <div className="text-center space-y-2">
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-gray-400">
               Cellule indépendante du réseau eXp France spécialisée en Normandie
             </p>
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-gray-400">
               &copy; {new Date().getFullYear()} eXp France - Normandie. Tous droits
               réservés.
             </p>
-            <p className="text-xs text-gray-500 mt-3">
+            <p className="text-xs text-gray-400 mt-3">
               Site créé par{" "}
               <a
                 href="https://www.atypikcode.fr/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-400 hover:text-blue-300 font-semibold transition-colors"
+                className="text-[#2998a6] hover:text-[#2998a6]/80 font-semibold transition-colors"
               >
                 atypikCode
               </a>
@@ -293,4 +299,3 @@ export default function Footer() {
     </footer>
   );
 }
-

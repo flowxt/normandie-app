@@ -12,6 +12,16 @@ const config: Config = {
         playfair: ["var(--font-playfair)"],
         inter: ["var(--font-inter)"],
       },
+      colors: {
+        // Palette de la charte graphique - Couleurs exactes
+        brand: {
+          'nuit': '#1e3771',        // Bleu nuit principal
+          'ocean': '#0d6c8a',       // Bleu-vert moyen
+          'petrole': '#06465c',     // Bleu pétrole sombre
+          'turquoise': '#2998a6',   // Turquoise lumineux
+          'deep': '#0c233c',        // Bleu très foncé
+        },
+      },
     },
   },
   plugins: [],

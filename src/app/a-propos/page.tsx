@@ -28,7 +28,7 @@ export default function AProposPage() {
             priority
             quality={100}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/85 via-blue-800/75 to-blue-900/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1e3771]/85 via-[#0d6c8a]/75 to-[#06465c]/90" />
         </motion.div>
 
         <motion.div
@@ -47,7 +47,7 @@ export default function AProposPage() {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
                 Une expertise au service
                 <br />
-                <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#2998a6] via-[#0d6c8a] to-[#2998a6] bg-clip-text text-transparent">
                   de votre projet
                 </span>
               </h1>
@@ -69,7 +69,7 @@ export default function AProposPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide mb-4 block">
+            <span className="text-[#0d6c8a] font-semibold text-sm uppercase tracking-wide mb-4 block">
               Notre histoire
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -107,7 +107,7 @@ export default function AProposPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide mb-4 block">
+            <span className="text-[#0d6c8a] font-semibold text-sm uppercase tracking-wide mb-4 block">
               Notre équipe
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -136,7 +136,7 @@ export default function AProposPage() {
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1e3771]/60 to-transparent" />
                 </div>
 
                 {/* Info */}
@@ -146,7 +146,7 @@ export default function AProposPage() {
                       <h3 className="text-3xl font-bold text-gray-900 mb-2">
                         Vincent Leclerc
                       </h3>
-                      <p className="text-lg text-blue-600 font-semibold mb-1">
+                      <p className="text-lg text-[#0d6c8a] font-semibold mb-1">
                         Conseiller Immobilier
                       </p>
                       <p className="text-sm text-gray-500">
@@ -171,7 +171,7 @@ export default function AProposPage() {
                   <div className="flex flex-col sm:flex-row gap-3">
                     <a
                       href="tel:+33123456789"
-                      className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold rounded-xl hover:shadow-lg transition-all hover:scale-105"
+                      className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-[#1e3771] to-[#2998a6] text-white font-semibold rounded-xl hover:shadow-lg transition-all hover:scale-105"
                     >
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -180,7 +180,7 @@ export default function AProposPage() {
                     </a>
                     <a
                       href="mailto:vincent@normandie-immo.fr"
-                      className="flex items-center justify-center gap-2 px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-blue-600 hover:text-blue-600 transition-all"
+                      className="flex items-center justify-center gap-2 px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-[#2998a6] hover:text-[#0d6c8a] transition-all"
                     >
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -201,8 +201,8 @@ export default function AProposPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto mt-16 text-center"
           >
-            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 lg:p-12 border border-blue-100">
-              <svg className="w-12 h-12 text-blue-600 mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24">
+            <div className="bg-gradient-to-br from-[#1e3771]/5 to-[#2998a6]/10 rounded-2xl p-8 lg:p-12 border border-[#2998a6]/20">
+              <svg className="w-12 h-12 text-[#0d6c8a] mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
               </svg>
               <p className="text-xl text-gray-700 italic leading-relaxed mb-6">
@@ -227,7 +227,7 @@ export default function AProposPage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide mb-4 block">
+              <span className="text-[#0d6c8a] font-semibold text-sm uppercase tracking-wide mb-4 block">
                 Notre engagement
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -273,7 +273,7 @@ export default function AProposPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide mb-4 block">
+            <span className="text-[#0d6c8a] font-semibold text-sm uppercase tracking-wide mb-4 block">
               Nos engagements
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -295,7 +295,7 @@ export default function AProposPage() {
                 ),
                 title: "Transparence",
                 description: "Un suivi clair et honnête, sans surprise.",
-                gradient: "from-blue-500 to-blue-600",
+                gradient: "from-[#1e3771] to-[#2998a6]",
               },
               {
                 icon: (
@@ -305,7 +305,7 @@ export default function AProposPage() {
                 ),
                 title: "Exigence",
                 description: "Chaque projet est mené avec rigueur et précision.",
-                gradient: "from-green-500 to-green-600",
+                gradient: "from-[#2998a6] to-[#0d6c8a]",
               },
               {
                 icon: (
@@ -315,7 +315,7 @@ export default function AProposPage() {
                 ),
                 title: "Proximité",
                 description: "Une relation directe et humaine avec nos clients.",
-                gradient: "from-purple-500 to-purple-600",
+                gradient: "from-[#0d6c8a] to-[#2998a6]",
               },
               {
                 icon: (
@@ -325,7 +325,7 @@ export default function AProposPage() {
                 ),
                 title: "Innovation",
                 description: "Des outils digitaux performants pour une expérience fluide et efficace.",
-                gradient: "from-cyan-500 to-cyan-600",
+                gradient: "from-[#2998a6] to-[#06465c]",
               },
             ].map((valeur, index) => (
               <motion.div
@@ -355,8 +355,13 @@ export default function AProposPage() {
       </section>
 
       {/* CTA Final */}
-      <section className="py-32 bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-900">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative py-32 bg-gradient-to-br from-[#1e3771] via-[#0d6c8a] to-[#06465c] overflow-hidden">
+        {/* Bulles décoratives */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#2998a6] rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#0c233c] rounded-full blur-3xl" />
+        </div>
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -366,7 +371,7 @@ export default function AProposPage() {
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
               Prêt à démarrer votre projet ?
             </h2>
-            <p className="text-xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
               Contactez-nous dès maintenant pour une estimation gratuite et un
               accompagnement personnalisé.
             </p>
@@ -375,7 +380,7 @@ export default function AProposPage() {
               <Button
                 href="/contact"
                 variant="accent"
-                className="w-full sm:w-auto text-lg px-12 py-6 shadow-2xl hover:shadow-yellow-500/50"
+                className="w-full sm:w-auto text-lg px-12 py-6 shadow-2xl hover:shadow-accent-500/50"
               >
                 <svg className="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />

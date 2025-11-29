@@ -29,12 +29,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2563eb;
+  background: linear-gradient(to bottom, #1e3771, #2998a6);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #1d4ed8;
+  background: linear-gradient(to bottom, #0c233c, #0d6c8a);
 }
 
 /* Animations personnalisées */
@@ -69,10 +69,10 @@ html {
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 20px rgba(41, 152, 166, 0.5);
   }
   50% {
-    box-shadow: 0 0 40px rgba(59, 130, 246, 0.8);
+    box-shadow: 0 0 40px rgba(41, 152, 166, 0.8);
   }
 }
 

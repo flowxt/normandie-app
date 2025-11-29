@@ -82,7 +82,7 @@ export default function ContactPage() {
             priority
             quality={100}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/80 via-blue-800/70 to-blue-900/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1e3771]/80 via-[#0d6c8a]/70 to-[#06465c]/90" />
         </motion.div>
 
         <motion.div
@@ -123,7 +123,7 @@ export default function ContactPage() {
             >
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Obtenez votre estimation{" "}
-                <span className="text-blue-600">gratuite</span>
+                <span className="bg-gradient-to-r from-[#1e3771] to-[#2998a6] bg-clip-text text-transparent">gratuite</span>
               </h2>
               <p className="text-lg text-gray-600 mb-10 leading-relaxed">
                 Remplissez ce formulaire et recevez une estimation précise de votre bien
@@ -178,7 +178,7 @@ export default function ContactPage() {
                     viewport={{ once: true }}
                     className="flex items-start gap-4"
                   >
-                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-xl flex items-center justify-center shadow-lg">
+                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#1e3771] to-[#2998a6] text-white rounded-xl flex items-center justify-center shadow-lg">
                       {item.icon}
                     </div>
                     <div>
@@ -197,7 +197,7 @@ export default function ContactPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 border border-blue-100"
+                className="bg-gradient-to-br from-[#1e3771]/5 to-[#2998a6]/10 rounded-2xl p-8 border border-[#2998a6]/20"
               >
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
                   Besoin d'une réponse immédiate ?
@@ -205,9 +205,9 @@ export default function ContactPage() {
                 <div className="space-y-3">
                   <a
                     href="tel:+33123456789"
-                    className="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors group"
+                    className="flex items-center gap-3 text-gray-700 hover:text-cyan-600 transition-colors group"
                   >
-                    <div className="w-10 h-10 bg-blue-600 text-white rounded-lg flex items-center justify-center group-hover:bg-blue-700 transition-colors">
+                    <div className="w-10 h-10 bg-gradient-to-r from-navy-600 to-cyan-500 text-white rounded-lg flex items-center justify-center group-hover:opacity-90 transition-all">
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
@@ -219,9 +219,9 @@ export default function ContactPage() {
                   </a>
                   <a
                     href="mailto:contact@normandie-immobilier.fr"
-                    className="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors group"
+                    className="flex items-center gap-3 text-gray-700 hover:text-cyan-600 transition-colors group"
                   >
-                    <div className="w-10 h-10 bg-blue-600 text-white rounded-lg flex items-center justify-center group-hover:bg-blue-700 transition-colors">
+                    <div className="w-10 h-10 bg-gradient-to-r from-navy-600 to-cyan-500 text-white rounded-lg flex items-center justify-center group-hover:opacity-90 transition-all">
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
@@ -257,7 +257,7 @@ export default function ContactPage() {
                         value={formData.firstName}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 transition-all outline-none"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#2998a6] focus:ring-4 focus:ring-[#2998a6]/20 transition-all outline-none"
                         placeholder="Jean"
                       />
                     </div>
@@ -272,7 +272,7 @@ export default function ContactPage() {
                         value={formData.lastName}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 transition-all outline-none"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#2998a6] focus:ring-4 focus:ring-[#2998a6]/20 transition-all outline-none"
                         placeholder="Dupont"
                       />
                     </div>
@@ -350,17 +350,17 @@ export default function ContactPage() {
                   </div>
 
                   {/* Checkbox DPE */}
-                  <div className="flex items-start gap-3 bg-green-50 rounded-xl p-4 border border-green-200">
+                  <div className="flex items-start gap-3 bg-[#2998a6]/10 rounded-xl p-4 border border-[#2998a6]/20">
                     <input
                       type="checkbox"
                       id="estimationDPE"
                       name="estimationDPE"
                       checked={formData.estimationDPE}
                       onChange={handleChange}
-                      className="mt-1 w-5 h-5 text-green-600 border-gray-300 rounded focus:ring-green-500"
+                      className="mt-1 w-5 h-5 text-[#2998a6] border-gray-300 rounded focus:ring-[#2998a6]"
                     />
                     <label htmlFor="estimationDPE" className="text-sm text-gray-700 cursor-pointer">
-                      <span className="font-semibold text-green-700">Oui, je souhaite un diagnostic DPE offert</span>
+                      <span className="font-semibold text-[#0d6c8a]">Oui, je souhaite un diagnostic DPE offert</span>
                       <span className="block text-gray-600 mt-1">
                         Découvrez comment améliorer le classement énergétique de votre bien
                       </span>
@@ -401,7 +401,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={status === "loading"}
-                    className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold py-4 px-8 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 group"
+                    className="w-full bg-gradient-to-r from-[#1e3771] to-[#2998a6] text-white font-bold py-4 px-8 rounded-xl hover:from-[#0c233c] hover:to-[#0d6c8a] transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 group"
                   >
                     {status === "loading" ? (
                       <>
@@ -433,8 +433,13 @@ export default function ContactPage() {
       </section>
 
       {/* Section réassurance finale */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 bg-gradient-to-br from-[#1e3771] via-[#0d6c8a] to-[#06465c] overflow-hidden">
+        {/* Bulles décoratives */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-[#2998a6] rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#0c233c] rounded-full blur-3xl" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -445,7 +450,7 @@ export default function ContactPage() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
               Pourquoi nous faire confiance ?
             </h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Expertise locale, réseau international et solutions innovantes
             </p>
           </motion.div>
@@ -478,7 +483,7 @@ export default function ContactPage() {
               >
                 <div className="text-5xl mb-4">{item.icon}</div>
                 <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                <p className="text-blue-100">{item.description}</p>
+                <p className="text-gray-300">{item.description}</p>
               </motion.div>
             ))}
           </div>

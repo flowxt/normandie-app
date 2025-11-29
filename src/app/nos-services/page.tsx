@@ -124,40 +124,40 @@ export default function NosServicesPage() {
 
   const colorSchemes = {
     blue: {
-      gradient: "from-blue-600 to-blue-700",
-      light: "from-blue-50 to-cyan-50",
-      text: "text-blue-600",
-      border: "border-blue-200",
+      gradient: "from-[#1e3771] to-[#2998a6]",
+      light: "from-[#1e3771]/5 to-[#2998a6]/10",
+      text: "text-[#0d6c8a]",
+      border: "border-[#2998a6]/20",
     },
     green: {
-      gradient: "from-green-600 to-green-700",
-      light: "from-green-50 to-emerald-50",
-      text: "text-green-600",
-      border: "border-green-200",
+      gradient: "from-[#2998a6] to-[#0d6c8a]",
+      light: "from-[#2998a6]/10 to-[#0d6c8a]/10",
+      text: "text-[#2998a6]",
+      border: "border-[#2998a6]/20",
     },
     cyan: {
-      gradient: "from-cyan-600 to-cyan-700",
-      light: "from-cyan-50 to-blue-50",
-      text: "text-cyan-600",
-      border: "border-cyan-200",
+      gradient: "from-[#0d6c8a] to-[#2998a6]",
+      light: "from-[#2998a6]/10 to-[#0d6c8a]/5",
+      text: "text-[#2998a6]",
+      border: "border-[#2998a6]/20",
     },
     purple: {
-      gradient: "from-purple-600 to-purple-700",
-      light: "from-purple-50 to-pink-50",
-      text: "text-purple-600",
-      border: "border-purple-200",
+      gradient: "from-[#1e3771] to-[#0d6c8a]",
+      light: "from-[#1e3771]/5 to-[#0d6c8a]/10",
+      text: "text-[#1e3771]",
+      border: "border-[#2998a6]/20",
     },
     orange: {
-      gradient: "from-orange-600 to-orange-700",
-      light: "from-orange-50 to-amber-50",
-      text: "text-orange-600",
-      border: "border-orange-200",
+      gradient: "from-[#2998a6] to-[#0d6c8a]",
+      light: "from-[#2998a6]/10 to-[#2998a6]/5",
+      text: "text-[#2998a6]",
+      border: "border-[#2998a6]/20",
     },
     indigo: {
-      gradient: "from-indigo-600 to-indigo-700",
-      light: "from-indigo-50 to-purple-50",
-      text: "text-indigo-600",
-      border: "border-indigo-200",
+      gradient: "from-[#0c233c] to-[#1e3771]",
+      light: "from-[#1e3771]/5 to-[#0c233c]/10",
+      text: "text-[#1e3771]",
+      border: "border-[#1e3771]/20",
     },
   };
 
@@ -174,7 +174,7 @@ export default function NosServicesPage() {
             priority
             quality={100}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/85 via-blue-800/75 to-blue-900/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1e3771]/85 via-[#0d6c8a]/75 to-[#06465c]/90" />
         </motion.div>
 
         <motion.div
@@ -193,19 +193,19 @@ export default function NosServicesPage() {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
                 Des services complets
                 <br />
-                <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#2998a6] via-[#0d6c8a] to-[#2998a6] bg-clip-text text-transparent">
                   pour votre réussite
                 </span>
               </h1>
               <p className="text-xl sm:text-2xl text-white/90 max-w-3xl mx-auto mb-8">
-                De l'estimation à la signature, nous vous accompagnons à chaque étape
+                De l&apos;estimation à la signature, nous vous accompagnons à chaque étape
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   href="/contact"
                   variant="accent"
-                  className="text-lg px-10 py-4 shadow-2xl hover:shadow-yellow-500/50"
+                  className="text-lg px-10 py-4 shadow-2xl hover:shadow-accent-500/50"
                 >
                   <svg className="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -228,7 +228,7 @@ export default function NosServicesPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Un accompagnement <span className="text-blue-600">360°</span>
+              Un accompagnement <span className="bg-gradient-to-r from-[#1e3771] to-[#2998a6] bg-clip-text text-transparent">360°</span>
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
               Chez eXp France Normandie, nous ne nous contentons pas de vendre des biens.
@@ -277,7 +277,7 @@ export default function NosServicesPage() {
 
                     {/* Badge si présent */}
                     {service.badge && (
-                      <div className="absolute -top-4 -right-4 bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-3 rounded-2xl shadow-xl flex items-center gap-2 font-bold">
+                      <div className="absolute -top-4 -right-4 bg-gradient-to-r from-[#2998a6] to-[#0d6c8a] text-white px-6 py-3 rounded-2xl shadow-xl flex items-center gap-2 font-bold">
                         <span>🌿</span>
                         <span>{service.badge}</span>
                       </div>
@@ -337,8 +337,13 @@ export default function NosServicesPage() {
       </section>
 
       {/* Section process */}
-      <section className="py-32 bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-32 bg-gradient-to-br from-[#1e3771] via-[#0d6c8a] to-[#06465c] overflow-hidden">
+        {/* Bulles décoratives */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#2998a6] rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#0c233c] rounded-full blur-3xl" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -349,7 +354,7 @@ export default function NosServicesPage() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
               Notre méthode en 4 étapes
             </h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Un processus éprouvé pour maximiser vos chances de réussite
             </p>
           </motion.div>
@@ -395,7 +400,7 @@ export default function NosServicesPage() {
                     ÉTAPE {step.number}
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-3">{step.title}</h3>
-                  <p className="text-blue-100">{step.description}</p>
+                  <p className="text-gray-300">{step.description}</p>
                 </div>
 
                 {/* Connecteur */}
@@ -431,7 +436,7 @@ export default function NosServicesPage() {
               <Button
                 href="/contact"
                 variant="accent"
-                className="w-full sm:w-auto text-lg px-12 py-6 shadow-2xl hover:shadow-yellow-500/50"
+                className="w-full sm:w-auto text-lg px-12 py-6 shadow-2xl hover:shadow-accent-500/50"
               >
                 <svg className="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
