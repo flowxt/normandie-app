@@ -18,40 +18,40 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "eXp France Normandie | Agent Immobilier - Estimation & Rénovation DPE",
+  title: "eXp Realty Gisors | Conseiller Immobilier - Vincent Leclerc",
   description:
-    "Agent immobilier expert en Normandie : vente, achat, estimation gratuite. Spécialiste rénovation énergétique et valorisation DPE. Caen, Rouen, Le Havre, Deauville. Réseau eXp France.",
+    "Conseiller immobilier eXp Realty basé à Gisors. Accompagnement personnalisé pour vente et achat de biens dans l'Eure (27), Val-d'Oise (95), Oise (60) et Seine-Maritime (76).",
   keywords:
-    "agent immobilier Normandie, immobilier Caen, vente maison Rouen, appartement Le Havre, estimation immobilière Calvados, rénovation énergétique, amélioration DPE, eXp France, Normandie immobilier, Deauville, Cherbourg, Évreux",
-  authors: [{ name: "eXp France - Normandie" }],
-  creator: "eXp France Normandie",
-  publisher: "eXp France",
-  metadataBase: new URL("https://exp-normandie.fr"),
+    "conseiller immobilier Gisors, immobilier Eure, vente maison Val-d'Oise, appartement Oise, estimation immobilière Gisors, eXp Realty, Vincent Leclerc, immobilier 27 95 60 76",
+  authors: [{ name: "Vincent Leclerc - eXp Realty" }],
+  creator: "Vincent Leclerc - eXp Realty",
+  publisher: "eXp Realty",
+  metadataBase: new URL("https://exp-gisors.fr"),
   alternates: {
-    canonical: "https://exp-normandie.fr",
+    canonical: "https://exp-gisors.fr",
   },
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://exp-normandie.fr",
-    siteName: "eXp France - Agent Immobilier Normandie",
-    title: "eXp France Normandie | Expert Immobilier & Rénovation Énergétique",
+    url: "https://exp-gisors.fr",
+    siteName: "Vincent Leclerc - Conseiller Immobilier eXp Realty",
+    title: "eXp Realty Gisors | Vincent Leclerc - Conseiller Immobilier",
     description:
-      "Agent immobilier spécialisé Normandie : vente, achat, estimation gratuite. Expert rénovation énergétique et valorisation DPE. Caen, Rouen, Le Havre, Deauville.",
+      "Conseiller immobilier basé à Gisors. Accompagnement personnalisé pour vos projets immobiliers dans l'Eure, Val-d'Oise, Oise et Seine-Maritime.",
     images: [
       {
         url: "/interieur.png",
         width: 1200,
         height: 630,
-        alt: "eXp France - Agent Immobilier Normandie",
+        alt: "Vincent Leclerc - Conseiller Immobilier eXp Realty",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "eXp France Normandie | Agent Immobilier & DPE",
+    title: "eXp Realty Gisors | Vincent Leclerc",
     description:
-      "Expert immobilier Normandie : vente, achat, estimation gratuite. Spécialiste rénovation énergétique. Réseau eXp France.",
+      "Conseiller immobilier basé à Gisors. Accompagnement personnalisé. Réseau eXp Realty.",
     images: ["/interieur.png"],
   },
   robots: {
@@ -79,24 +79,23 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
-    name: "eXp France - Normandie",
-    image: "https://exp-normandie.fr/interieur.png",
-    url: "https://exp-normandie.fr",
+    name: "Vincent Leclerc - eXp Realty",
+    image: "https://exp-gisors.fr/interieur.png",
+    url: "https://exp-gisors.fr",
     telephone: "+33662155757",
     address: {
       "@type": "PostalAddress",
-      addressRegion: "Normandie",
+      addressLocality: "Gisors",
+      addressRegion: "Eure",
+      postalCode: "27140",
       addressCountry: "FR",
     },
     areaServed: [
-      { "@type": "City", name: "Caen" },
-      { "@type": "City", name: "Rouen" },
-      { "@type": "City", name: "Le Havre" },
-      { "@type": "City", name: "Cherbourg" },
-      { "@type": "City", name: "Évreux" },
-      { "@type": "City", name: "Alençon" },
-      { "@type": "City", name: "Lisieux" },
-      { "@type": "City", name: "Deauville" },
+      { "@type": "City", name: "Gisors" },
+      { "@type": "AdministrativeArea", name: "Eure (27)" },
+      { "@type": "AdministrativeArea", name: "Val-d'Oise (95)" },
+      { "@type": "AdministrativeArea", name: "Oise (60)" },
+      { "@type": "AdministrativeArea", name: "Seine-Maritime (76)" },
     ],
     priceRange: "€€",
     openingHoursSpecification: {

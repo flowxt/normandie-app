@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { firstName, lastName, email, phone, propertyType, message, estimationDPE } = body;
+    const { firstName, lastName, email, phone, propertyType, message } = body;
 
     // Validation basique
     if (!firstName || !lastName || !email || !phone || !propertyType) {
@@ -36,14 +36,13 @@ export async function POST(request: Request) {
       phone,
       propertyType,
       message,
-      estimationDPE,
       date: new Date().toISOString(),
     });
 
     // Exemple d'envoi d'email (décommentez et configurez selon votre service)
     /*
     await sendEmail({
-      to: "contact@normandie-immobilier.fr",
+      to: "vincent@exp-gisors.fr",
       subject: `Nouvelle demande - ${firstName} ${lastName}`,
       html: `
         <h2>Nouvelle demande de contact</h2>
@@ -51,7 +50,6 @@ export async function POST(request: Request) {
         <p><strong>Email :</strong> ${email}</p>
         <p><strong>Téléphone :</strong> ${phone}</p>
         <p><strong>Type de bien :</strong> ${propertyType}</p>
-        <p><strong>DPE offert :</strong> ${estimationDPE ? "Oui" : "Non"}</p>
         <p><strong>Message :</strong></p>
         <p>${message || "Aucun message"}</p>
       `,

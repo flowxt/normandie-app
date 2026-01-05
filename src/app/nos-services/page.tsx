@@ -42,10 +42,10 @@ export default function NosServicesPage() {
       title: "Rénovation énergétique",
       description: "En partenariat avec ENRLUX France, transformez votre passoire énergétique en atout majeur. Passez de F à C et augmentez la valeur de votre bien jusqu'à 20%.",
       features: [
-        "Diagnostic DPE offert",
         "Panneaux solaires & pompes à chaleur",
         "Aides de l'État jusqu'à 70%",
         "ROI garanti sur la vente",
+        "Partenaires certifiés",
       ],
       color: "green",
       image: "/maison-solaire.jpg",
@@ -57,13 +57,13 @@ export default function NosServicesPage() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>
       ),
-      title: "Amélioration du DPE",
-      description: "Un bon DPE n'est plus une option. Nous analysons votre bien et vous proposons un plan d'action sur-mesure pour améliorer votre classement et séduire les acheteurs.",
+      title: "Conseil personnalisé",
+      description: "Chaque projet est unique. Nous analysons votre situation et vos objectifs pour vous proposer un plan d'action adapté et maximiser vos chances de réussite.",
       features: [
-        "Audit énergétique complet",
-        "Plan de rénovation personnalisé",
-        "Coordination des travaux",
-        "Suivi jusqu'à certification",
+        "Analyse complète de votre bien",
+        "Stratégie de vente personnalisée",
+        "Conseils en valorisation",
+        "Accompagnement sur-mesure",
       ],
       color: "cyan",
       image: "/maison-dpe.jpg",
@@ -97,7 +97,7 @@ export default function NosServicesPage() {
       features: [
         "Publication sur 50+ portails",
         "Réseau international eXp (89 000 agents)",
-        "Campagne ciblée sur réseaux sociaux",
+        "Partage avec les collaborateurs du groupe",
         "Base de données qualifiée",
       ],
       color: "orange",
@@ -201,7 +201,7 @@ export default function NosServicesPage() {
                 De l&apos;estimation à la signature, nous vous accompagnons à chaque étape
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center pb-16">
                 <Button
                   href="/contact"
                   variant="accent"
@@ -210,7 +210,7 @@ export default function NosServicesPage() {
                   <svg className="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                  Estimation + DPE Gratuit
+                  Estimation gratuite
                 </Button>
               </div>
             </motion.div>
@@ -278,7 +278,9 @@ export default function NosServicesPage() {
                     {/* Badge si présent */}
                     {service.badge && (
                       <div className="absolute -top-4 -right-4 bg-gradient-to-r from-[#2998a6] to-[#0d6c8a] text-white px-6 py-3 rounded-2xl shadow-xl flex items-center gap-2 font-bold">
-                        <span>🌿</span>
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
                         <span>{service.badge}</span>
                       </div>
                     )}
@@ -365,25 +367,21 @@ export default function NosServicesPage() {
                 number: "01",
                 title: "Estimation",
                 description: "Visite gratuite et analyse complète de votre bien",
-                icon: "📊",
               },
               {
                 number: "02",
                 title: "Valorisation",
-                description: "Conseils DPE et rénovation énergétique si nécessaire",
-                icon: "⚡",
+                description: "Conseils personnalisés pour maximiser la valeur",
               },
               {
                 number: "03",
                 title: "Diffusion",
                 description: "Publication sur tous les portails et notre réseau",
-                icon: "📢",
               },
               {
                 number: "04",
                 title: "Signature",
                 description: "Accompagnement jusqu'à la vente chez le notaire",
-                icon: "✍️",
               },
             ].map((step, index) => (
               <motion.div
@@ -395,10 +393,7 @@ export default function NosServicesPage() {
                 className="relative"
               >
                 <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 h-full hover:bg-white/15 transition-all">
-                  <div className="text-6xl mb-4">{step.icon}</div>
-                  <div className="text-white/40 font-bold text-sm mb-2">
-                    ÉTAPE {step.number}
-                  </div>
+                  <div className="text-5xl font-bold text-white/20 mb-4">{step.number}</div>
                   <h3 className="text-2xl font-bold text-white mb-3">{step.title}</h3>
                   <p className="text-gray-300">{step.description}</p>
                 </div>
@@ -441,7 +436,7 @@ export default function NosServicesPage() {
                 <svg className="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                Estimation + DPE Gratuit
+                Estimation gratuite
               </Button>
               <Button
                 href="tel:+33123456789"

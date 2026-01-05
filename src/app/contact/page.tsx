@@ -21,7 +21,6 @@ export default function ContactPage() {
     phone: "",
     propertyType: "maison",
     message: "",
-    estimationDPE: true,
   });
 
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -51,7 +50,6 @@ export default function ContactPage() {
         phone: "",
         propertyType: "maison",
         message: "",
-        estimationDPE: true,
       });
     } catch (error) {
       setStatus("error");
@@ -102,7 +100,7 @@ export default function ContactPage() {
                 Parlons de votre projet
               </h1>
               <p className="text-xl sm:text-2xl text-white/90 max-w-3xl mx-auto">
-                Estimation gratuite • DPE offert • Réponse sous 24h
+                Estimation gratuite • Conseil personnalisé • Réponse sous 24h
               </p>
             </motion.div>
           </div>
@@ -127,7 +125,7 @@ export default function ContactPage() {
               </h2>
               <p className="text-lg text-gray-600 mb-10 leading-relaxed">
                 Remplissez ce formulaire et recevez une estimation précise de votre bien
-                ainsi qu'un diagnostic DPE offert. Notre équipe vous recontacte sous 24h.
+                ainsi qu'un conseil personnalisé. Nous vous recontactons sous 24h.
               </p>
 
               {/* Avantages */}
@@ -148,8 +146,8 @@ export default function ContactPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                       </svg>
                     ),
-                    title: "Diagnostic DPE offert",
-                    description: "Découvrez comment améliorer votre classement énergétique",
+                    title: "Conseil personnalisé",
+                    description: "Des recommandations adaptées à votre projet",
                   },
                   {
                     icon: (
@@ -349,24 +347,6 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  {/* Checkbox DPE */}
-                  <div className="flex items-start gap-3 bg-[#2998a6]/10 rounded-xl p-4 border border-[#2998a6]/20">
-                    <input
-                      type="checkbox"
-                      id="estimationDPE"
-                      name="estimationDPE"
-                      checked={formData.estimationDPE}
-                      onChange={handleChange}
-                      className="mt-1 w-5 h-5 text-[#2998a6] border-gray-300 rounded focus:ring-[#2998a6]"
-                    />
-                    <label htmlFor="estimationDPE" className="text-sm text-gray-700 cursor-pointer">
-                      <span className="font-semibold text-[#0d6c8a]">Oui, je souhaite un diagnostic DPE offert</span>
-                      <span className="block text-gray-600 mt-1">
-                        Découvrez comment améliorer le classement énergétique de votre bien
-                      </span>
-                    </label>
-                  </div>
-
                   {/* Message de statut */}
                   {status === "success" && (
                     <motion.div
@@ -458,19 +438,31 @@ export default function ContactPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: "🏆",
-                title: "10+ ans d'expérience",
-                description: "Une expertise reconnue sur le marché immobilier normand",
+                title: "20 ans d'expérience",
+                description: "Une expertise reconnue sur le marché immobilier local",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                  </svg>
+                ),
               },
               {
-                icon: "🌍",
-                title: "Réseau eXp France",
+                title: "Réseau eXp Realty",
                 description: "Accès à un réseau international pour maximiser la visibilité",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                  </svg>
+                ),
               },
               {
-                icon: "🌿",
                 title: "Partenaire ENRLUX",
                 description: "Solutions de rénovation énergétique avec aides jusqu'à 70%",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                ),
               },
             ].map((item, index) => (
               <motion.div
@@ -481,7 +473,9 @@ export default function ContactPage() {
                 viewport={{ once: true }}
                 className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center hover:bg-white/15 transition-all"
               >
-                <div className="text-5xl mb-4">{item.icon}</div>
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#2998a6] to-[#0d6c8a] text-white rounded-2xl mb-4">
+                  {item.icon}
+                </div>
                 <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
                 <p className="text-gray-300">{item.description}</p>
               </motion.div>

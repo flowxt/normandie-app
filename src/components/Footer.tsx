@@ -6,7 +6,7 @@ export default function Footer() {
     services: [
       { name: "Estimation immobilière", href: "/nos-services" },
       { name: "Rénovation énergétique", href: "/nos-services" },
-      { name: "Valorisation DPE", href: "/nos-services" },
+      { name: "Conseil personnalisé", href: "/nos-services" },
     ],
     pages: [
       { name: "Notre histoire", href: "/a-propos" },
@@ -37,10 +37,10 @@ export default function Footer() {
                 className="h-10 w-auto brightness-0 invert"
               />
             </div>
-            <h3 className="text-lg font-bold text-white">eXp France - Normandie</h3>
+            <h3 className="text-lg font-bold text-white">Vincent Leclerc - eXp Realty</h3>
             <p className="text-sm text-gray-300/80 leading-relaxed">
-              Votre partenaire immobilier de confiance pour la vente, l&apos;achat et la
-              valorisation de biens en Normandie.
+              Conseiller immobilier basé à Gisors, intervenant sur l&apos;Eure, le Val-d&apos;Oise, 
+              l&apos;Oise et les communes limitrophes de Seine-Maritime.
             </p>
             <div className="pt-2">
               <a
@@ -193,9 +193,9 @@ export default function Footer() {
                 </svg>
                 <div>
                   <p className="text-sm text-gray-300/80">
-                    Normandie
+                    Basé à Gisors (27)
                     <br />
-                    Calvados, Eure, Manche, Orne, Seine-Maritime
+                    Eure, Val-d&apos;Oise, Oise, Seine-Maritime
                   </p>
                 </div>
               </li>
@@ -250,24 +250,21 @@ export default function Footer() {
           {/* Zone d'expertise */}
           <div className="mb-6 text-center">
             <p className="text-sm font-semibold text-[#2998a6] mb-3">
-              Zone d&apos;expertise - Normandie
+              Zone d&apos;intervention - Basé à Gisors
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               {[
-                "Caen",
-                "Rouen",
-                "Le Havre",
-                "Cherbourg",
-                "Évreux",
-                "Alençon",
-                "Lisieux",
-                "Deauville",
-              ].map((ville) => (
+                "Gisors",
+                "Eure (27)",
+                "Val-d'Oise (95)",
+                "Oise (60)",
+                "Seine-Maritime (76)",
+              ].map((zone) => (
                 <span
-                  key={ville}
+                  key={zone}
                   className="inline-block px-4 py-2 bg-[#2998a6]/10 text-gray-300 text-xs font-medium rounded-full border border-[#2998a6]/30 hover:border-[#2998a6] hover:text-white hover:bg-[#2998a6]/20 transition-all cursor-default"
                 >
-                  {ville}
+                  {zone}
                 </span>
               ))}
             </div>
@@ -276,10 +273,10 @@ export default function Footer() {
           {/* Copyright et mentions */}
           <div className="text-center space-y-2">
             <p className="text-xs text-gray-400">
-              Cellule indépendante du réseau eXp France spécialisée en Normandie
+              Vincent Leclerc - Conseiller immobilier indépendant eXp Realty
             </p>
             <p className="text-xs text-gray-400">
-              &copy; {new Date().getFullYear()} eXp France - Normandie. Tous droits
+              &copy; {new Date().getFullYear()} Vincent Leclerc - eXp Realty. Tous droits
               réservés.
             </p>
             <p className="text-xs text-gray-400 mt-3">

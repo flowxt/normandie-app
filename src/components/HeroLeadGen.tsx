@@ -59,7 +59,7 @@ export default function HeroLeadGen() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
           </span>
-          <span className="text-white font-semibold text-sm">eXp France - Normandie</span>
+          <span className="text-white font-semibold text-sm">eXp Realty - Basé à Gisors</span>
         </motion.div>
 
         {/* Titre principal percutant */}
@@ -71,7 +71,7 @@ export default function HeroLeadGen() {
         >
           <span className="block mb-2">Vous cherchez à</span>
           <span className="block bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-300 bg-clip-text text-transparent animate-gradient">
-            vendre en Normandie ?
+            vendre votre bien ?
           </span>
         </motion.h1>
 
@@ -82,7 +82,7 @@ export default function HeroLeadGen() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-xl sm:text-2xl lg:text-3xl text-blue-50 mb-6 max-w-4xl mx-auto font-light leading-relaxed"
         >
-          Estimation gratuite • Rénovation énergétique • Valorisation DPE
+          Estimation gratuite • Conseil personnalisé • Accompagnement sur-mesure
         </motion.p>
 
         <motion.p
@@ -91,8 +91,8 @@ export default function HeroLeadGen() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-lg sm:text-xl text-blue-100 mb-12 max-w-3xl mx-auto"
         >
-          Maximisez la valeur de votre bien grâce à notre expertise locale et nos solutions de rénovation énergétique.{" "}
-          <strong className="text-white">Passez de F à C</strong> et vendez plus vite, plus cher.
+          Maximisez la valeur de votre bien grâce à notre expertise locale.{" "}
+          Basé à <strong className="text-white">Gisors</strong>, j'interviens sur l'Eure, le Val-d'Oise, l'Oise et la Seine-Maritime.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -106,7 +106,7 @@ export default function HeroLeadGen() {
             <svg className="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
-            Estimation + DPE Gratuit
+            Estimation gratuite
           </Button>
           <Button href="/nos-services" variant="outline" className="w-full sm:w-auto text-lg px-10 py-5">
             Découvrir nos services
@@ -121,9 +121,9 @@ export default function HeroLeadGen() {
           className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto"
         >
           {[
-            { number: "100%", label: "Clients satisfaits", icon: "⭐" },
-            { number: "10+", label: "Ans d'expérience", icon: "🏆" },
-            { number: "24h", label: "Réponse garantie", icon: "⚡" },
+            { number: "100%", label: "Clients satisfaits" },
+            { number: "20", label: "Ans d'expérience" },
+            { number: "24h", label: "Réponse garantie" },
           ].map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -132,7 +132,6 @@ export default function HeroLeadGen() {
               transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
               className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all hover:scale-105"
             >
-              <div className="text-4xl mb-2">{stat.icon}</div>
               <div className="text-4xl font-bold text-white mb-2">{stat.number}</div>
               <div className="text-blue-100 text-sm font-medium">{stat.label}</div>
             </motion.div>

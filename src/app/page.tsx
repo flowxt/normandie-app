@@ -52,7 +52,7 @@ export default function Home() {
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-[#2998a6]"></span>
               </span>
               <span className="text-white font-semibold text-sm tracking-wide">
-                eXp France • Votre expert immobilier en Normandie
+                eXp Realty • Conseiller immobilier basé à Gisors
               </span>
             </motion.div>
 
@@ -77,7 +77,7 @@ export default function Home() {
               transition={{ duration: 1, delay: 0.6 }}
               className="text-xl sm:text-2xl lg:text-3xl text-white/90 mb-4 max-w-4xl mx-auto font-light"
             >
-              Accompagnement personnalisé • Rénovation énergétique • Valorisation DPE
+              Accompagnement personnalisé • Estimation précise • Conseil sur-mesure
             </motion.p>
 
             <motion.p
@@ -86,8 +86,8 @@ export default function Home() {
               transition={{ duration: 1, delay: 0.8 }}
               className="text-lg sm:text-xl text-white/80 mb-12 max-w-3xl mx-auto"
             >
-              Transformez votre passoire énergétique en atout majeur.{" "}
-              <strong className="text-white">Passez de F à C</strong> et augmentez la valeur de votre bien jusqu'à <strong className="text-white">20%</strong>
+              Basé à Gisors, j'interviens sur un secteur local couvrant{" "}
+              <strong className="text-white">l'Eure, le Val-d'Oise, l'Oise</strong> et certaines communes limitrophes de Seine-Maritime.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -115,7 +115,7 @@ export default function Home() {
                     d="M13 10V3L4 14h7v7l9-11h-7z"
                   />
                 </svg>
-                Estimation + DPE Gratuit
+                Estimation gratuite
               </Button>
               <Button
                 href="#services"
@@ -134,16 +134,15 @@ export default function Home() {
               className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto"
             >
               {[
-                { number: "100%", label: "Clients satisfaits", icon: "⭐" },
-                { number: "10+", label: "Ans d'expérience", icon: "🏆" },
-                { number: "24h", label: "Réponse garantie", icon: "⚡" },
-              ].map((stat, index) => (
+                { number: "100%", label: "Clients satisfaits" },
+                { number: "20", label: "Ans d'expérience" },
+                { number: "24h", label: "Réponse garantie" },
+              ].map((stat) => (
                 <motion.div
                   key={stat.label}
                   whileHover={{ scale: 1.05 }}
                   className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20"
                 >
-                  <div className="text-4xl mb-2">{stat.icon}</div>
                   <div className="text-4xl font-bold text-white mb-1">
                     {stat.number}
                   </div>
@@ -156,33 +155,6 @@ export default function Home() {
           </div>
         </motion.div>
 
-        {/* Flèche scroll down */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: [0, 10, 0] }}
-          transition={{
-            opacity: { delay: 2 },
-            y: { duration: 2, repeat: Infinity },
-          }}
-          className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-20"
-        >
-          <div className="flex flex-col items-center gap-2">
-            <span className="text-white/60 text-sm font-medium">Découvrir</span>
-            <svg
-              className="w-6 h-6 text-white/60"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 14l-7 7m0 0l-7-7m7 7V3"
-              />
-            </svg>
-          </div>
-        </motion.div>
       </section>
 
       {/* Section Rénovation Énergétique avec image maison solaire */}
@@ -204,20 +176,20 @@ export default function Home() {
         theme="green"
       />
 
-      {/* Section DPE avec image maison-dpe */}
+      {/* Section Zone d'intervention */}
       <ScrollRevealSection
         image="/maison-dpe.jpg"
-        imageAlt="Maison avec étiquette DPE"
-        title="Valorisation DPE"
-        subtitle="De F à C : +20% de valeur"
-        description="Un bon DPE n'est plus une option, c'est une nécessité. Nos experts analysent votre bien et vous proposent un plan d'action sur-mesure pour améliorer votre classement énergétique et séduire les acheteurs."
+        imageAlt="Maison traditionnelle"
+        title="Zone d'intervention"
+        subtitle="Un secteur local et cohérent"
+        description="Basé à Gisors, j'interviens en collaboration avec Catherine Di Palma sur un périmètre géographique proche, à la jonction de plusieurs départements. Cette implantation locale garantit une connaissance fine du marché et un accompagnement de proximité."
         features={[
-          "Diagnostic DPE offert",
-          "Plan de rénovation personnalisé",
-          "Augmentation de la valeur jusqu'à 20%",
-          "Vente plus rapide garantie",
+          "Eure (27)",
+          "Val-d'Oise (95)",
+          "Oise (60)",
+          "Communes limitrophes de Seine-Maritime (76)",
         ]}
-        ctaText="Estimation + DPE Gratuit"
+        ctaText="Me contacter"
         ctaHref="/contact"
         imagePosition="left"
         theme="blue"
@@ -264,7 +236,7 @@ export default function Home() {
                 ),
                 title: "Estimation gratuite",
                 description:
-                  "Analyse du marché local, visite sur place et estimation précise de votre bien en Normandie.",
+                  "Analyse du marché local, visite sur place et estimation précise de votre bien.",
               },
               {
                 icon: (
@@ -303,9 +275,9 @@ export default function Home() {
                     />
                   </svg>
                 ),
-                title: "Amélioration DPE",
+                title: "Conseil personnalisé",
                 description:
-                  "Passez de F à C et vendez plus cher. Diagnostic offert et plan d'action personnalisé.",
+                  "Un accompagnement sur-mesure adapté à votre projet et vos objectifs.",
               },
               {
                 icon: (
@@ -386,7 +358,9 @@ export default function Home() {
                 <div className="h-full bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border border-gray-100">
                   {service.badge && (
                     <div className="absolute -top-3 -right-3 bg-gradient-to-r from-[#2998a6] to-[#0d6c8a] text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg flex items-center gap-1">
-                      <span>🌿</span>
+                      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
                       <span>{service.badge}</span>
                     </div>
                   )}
@@ -426,8 +400,8 @@ export default function Home() {
               Prêt à valoriser votre bien ?
             </h2>
             <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Obtenez une estimation gratuite et un diagnostic DPE offert. Découvrez
-              comment augmenter la valeur de votre propriété en Normandie.
+              Obtenez une estimation gratuite et un conseil personnalisé. Découvrez
+              comment valoriser votre propriété avec un accompagnement de proximité.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -449,7 +423,7 @@ export default function Home() {
                     d="M13 10V3L4 14h7v7l9-11h-7z"
                   />
                 </svg>
-                Estimation + DPE Gratuit
+                Estimation gratuite
               </Button>
               <Button
                 href="/nos-services"

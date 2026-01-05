@@ -16,41 +16,47 @@ export default function BiensAVendrePage() {
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
   const y = useTransform(scrollYProgress, [0, 1], [0, 150]);
 
-  const villes = [
+  const zones = [
     {
-      name: "Caen",
-      description: "Capitale régionale dynamique",
-      properties: "Maisons et appartements",
+      name: "Gisors",
+      description: "Notre point central d'intervention",
+      properties: "Maisons et terrains",
+      department: "27 - Eure",
       image: "/normandie.jpg",
     },
     {
-      name: "Rouen",
-      description: "Ville historique prisée",
-      properties: "Centres-villes et périphérie",
+      name: "Eure (27)",
+      description: "Communes autour de Gisors",
+      properties: "Résidentiel et rural",
+      department: "Zone principale",
       image: "/normandie.jpg",
     },
     {
-      name: "Le Havre",
-      description: "Port maritime moderne",
-      properties: "Bord de mer et centre",
+      name: "Val-d'Oise (95)",
+      description: "Ouest de l'Île-de-France",
+      properties: "Maisons et pavillons",
+      department: "Communes limitrophes",
       image: "/normandie.jpg",
     },
     {
-      name: "Deauville",
-      description: "Station balnéaire de prestige",
-      properties: "Villas et appartements",
+      name: "Oise (60)",
+      description: "Secteur sud-ouest",
+      properties: "Opportunités variées",
+      department: "Communes limitrophes",
       image: "/normandie.jpg",
     },
     {
-      name: "Cherbourg",
-      description: "Cité maritime",
-      properties: "Opportunités attractives",
+      name: "Seine-Maritime (76)",
+      description: "Communes en continuité directe",
+      properties: "Secteur rural préservé",
+      department: "Zone limitrophe",
       image: "/normandie.jpg",
     },
     {
-      name: "Évreux",
-      description: "Ville verte et accessible",
-      properties: "Résidentiel calme",
+      name: "Vexin",
+      description: "Territoire d'exception",
+      properties: "Charme et authenticité",
+      department: "Région naturelle",
       image: "/normandie.jpg",
     },
   ];
@@ -82,13 +88,13 @@ export default function BiensAVendrePage() {
               transition={{ duration: 0.8 }}
             >
               <span className="inline-block bg-white/10 backdrop-blur-md px-6 py-2 rounded-full text-white font-semibold text-sm mb-6 border border-white/20">
-                Biens disponibles en Normandie
+                Biens disponibles autour de Gisors
               </span>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 leading-tight">
                 Trouvez votre bien
                 <br />
                 <span className="bg-gradient-to-r from-[#2998a6] via-[#0d6c8a] to-[#2998a6] bg-clip-text text-transparent">
-                  en Normandie
+                  dans notre secteur
                 </span>
               </h1>
               <p className="text-xl sm:text-2xl text-white/90 max-w-3xl mx-auto mb-12">
@@ -191,24 +197,40 @@ export default function BiensAVendrePage() {
             <div className="grid md:grid-cols-2 gap-6 mb-10">
               {[
                 {
-                  icon: "📊",
                   title: "Estimation gratuite",
-                  description: "Analyse précise de votre bien en Normandie sous 48h",
+                  description: "Analyse précise de votre bien sous 48h",
+                  icon: (
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                  ),
                 },
                 {
-                  icon: "⚡",
-                  title: "DPE offert",
-                  description: "Diagnostic énergétique complet pour valoriser votre bien",
+                  title: "Conseil personnalisé",
+                  description: "Un accompagnement adapté à votre projet et vos objectifs",
+                  icon: (
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                  ),
                 },
                 {
-                  icon: "🌿",
                   title: "Rénovation énergétique",
                   description: "Partenariat ENRLUX avec aides de l'État jusqu'à 70%",
+                  icon: (
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  ),
                 },
                 {
-                  icon: "🏆",
                   title: "Expertise locale",
-                  description: "Plus de 10 ans d'expérience sur le marché normand",
+                  description: "Plus de 20 ans d'expérience sur le marché local",
+                  icon: (
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                    </svg>
+                  ),
                 },
               ].map((item, index) => (
                 <motion.div
@@ -220,7 +242,9 @@ export default function BiensAVendrePage() {
                   whileHover={{ x: 5 }}
                   className="flex items-start gap-4 bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-[#2998a6]/20 shadow-sm hover:shadow-md transition-all"
                 >
-                  <div className="text-4xl flex-shrink-0">{item.icon}</div>
+                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#1e3771] to-[#2998a6] text-white rounded-xl flex items-center justify-center">
+                    {item.icon}
+                  </div>
                   <div>
                     <h4 className="text-lg font-bold text-gray-900 mb-1">{item.title}</h4>
                     <p className="text-gray-600">{item.description}</p>
@@ -234,7 +258,7 @@ export default function BiensAVendrePage() {
                 <svg className="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                Estimation + DPE Gratuit
+                Estimation gratuite
               </Button>
               <Button href="/nos-services" variant="outline-dark" className="text-lg px-10 py-4">
                 Découvrir nos services
@@ -284,14 +308,14 @@ export default function BiensAVendrePage() {
               Nos secteurs <span className="bg-gradient-to-r from-[#1e3771] to-[#2998a6] bg-clip-text text-transparent">d'intervention</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Des villes dynamiques et recherchées à travers toute la Normandie
+              Un secteur géographique cohérent à la jonction de 4 départements
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {villes.map((ville, index) => (
+            {zones.map((zone, index) => (
               <motion.div
-                key={ville.name}
+                key={zone.name}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -302,23 +326,24 @@ export default function BiensAVendrePage() {
                 <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all border border-gray-100">
                   <div className="relative h-48 overflow-hidden">
                     <Image
-                      src={ville.image}
-                      alt={ville.name}
+                      src={zone.image}
+                      alt={zone.name}
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1e3771]/80 to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="text-2xl font-bold text-white mb-1">{ville.name}</h3>
+                      <h3 className="text-2xl font-bold text-white mb-1">{zone.name}</h3>
+                      <span className="text-white/80 text-sm">{zone.department}</span>
                     </div>
                   </div>
                   <div className="p-6">
-                    <p className="text-gray-600 mb-3">{ville.description}</p>
+                    <p className="text-gray-600 mb-3">{zone.description}</p>
                     <div className="flex items-center gap-2 text-[#0d6c8a] font-semibold text-sm">
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                       </svg>
-                      <span>{ville.properties}</span>
+                      <span>{zone.properties}</span>
                     </div>
                   </div>
                 </div>
@@ -326,20 +351,23 @@ export default function BiensAVendrePage() {
             ))}
           </div>
 
-          {/* Ajout d'autres villes */}
+          {/* Zone d'intervention */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="mt-12 text-center"
+            className="mt-16 bg-gradient-to-br from-[#1e3771]/5 to-[#2998a6]/10 rounded-2xl p-8 border border-[#2998a6]/20"
           >
-            <p className="text-gray-600 text-lg mb-6">
-              Et bien d'autres villes en Normandie : Lisieux, Alençon, Dieppe, Fécamp...
+            <p className="text-gray-700 text-lg text-center max-w-3xl mx-auto leading-relaxed">
+              Mon activité est volontairement concentrée autour de <strong className="text-[#0d6c8a]">Gisors</strong> et des départements voisins 
+              (27, 95, 60 et communes limitrophes du 76), afin de garantir des interventions efficaces et des délais maîtrisés.
             </p>
-            <Button href="/contact" variant="outline-dark">
-              Contactez-nous pour votre secteur
-            </Button>
+            <div className="text-center mt-6">
+              <Button href="/contact" variant="outline-dark">
+                Contactez-nous pour votre projet
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -383,7 +411,7 @@ export default function BiensAVendrePage() {
                 Vous souhaitez vendre ?
               </h2>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Confiez-nous la vente de votre propriété en Normandie et bénéficiez
+                Confiez-nous la vente de votre propriété et bénéficiez
                 de notre expertise locale, notre réseau international eXp et nos
                 solutions de rénovation énergétique.
               </p>
@@ -391,8 +419,8 @@ export default function BiensAVendrePage() {
               <div className="space-y-4 mb-10">
                 {[
                   "Estimation gratuite sous 48h",
-                  "Diagnostic DPE offert",
-                  "Valorisation jusqu'à +20%",
+                  "Conseil personnalisé",
+                  "Valorisation de votre bien",
                   "Diffusion sur 50+ portails",
                   "Réseau international de 89 000 agents",
                   "Accompagnement jusqu'à la signature",
@@ -424,7 +452,7 @@ export default function BiensAVendrePage() {
                   <svg className="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
-                  Estimation + DPE Gratuit
+                  Estimation gratuite
                 </Button>
                 <Button
                   href="/nos-services"
@@ -439,40 +467,6 @@ export default function BiensAVendrePage() {
         </div>
       </section>
 
-      {/* CTA Newsletter */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-br from-[#1e3771] to-[#2998a6] rounded-3xl p-10 lg:p-14 text-center text-white shadow-2xl"
-          >
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl mb-6">
-              <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Soyez informé en priorité
-            </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Recevez les nouvelles annonces en avant-première et nos conseils
-              exclusifs pour réussir votre projet immobilier en Normandie
-            </p>
-            <button
-              onClick={() => window.location.href = '/contact'}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#1e3771] font-bold text-base rounded-xl shadow-xl hover:shadow-2xl hover:bg-[#2998a6]/10 transition-all hover:scale-105"
-            >
-              Je m'inscris gratuitement
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </button>
-          </motion.div>
-        </div>
-      </section>
     </>
   );
 }

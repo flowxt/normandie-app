@@ -158,12 +158,12 @@ export default function AProposPage() {
                   <div className="space-y-4 mb-8">
                     <p className="text-gray-600 leading-relaxed">
                       Fort de plus de 10 ans d'expérience dans l'immobilier, je mets mon
-                      expertise au service de vos projets en Normandie.
+                      expertise au service de vos projets. Basé à <strong className="text-gray-900">Gisors</strong>, j'interviens 
+                      en collaboration avec Catherine Di Palma sur un secteur local cohérent.
                     </p>
                     <p className="text-gray-600 leading-relaxed">
-                      Mon objectif : vous accompagner avec professionnalisme et proximité
-                      pour valoriser votre bien et réussir votre vente dans les meilleures
-                      conditions.
+                      Notre zone d'intervention couvre l'Eure (27), le Val-d'Oise (95), l'Oise (60) 
+                      et certaines communes limitrophes de Seine-Maritime (76).
                     </p>
                   </div>
 
@@ -385,7 +385,7 @@ export default function AProposPage() {
                 <svg className="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                Estimation + DPE Gratuit
+                Estimation gratuite
               </Button>
               <Button
                 href="tel:+33123456789"
