@@ -135,6 +135,46 @@ export default function Footer() {
               </a>
               <p className="text-xs text-gray-400 mt-2">Rénovation énergétique</p>
             </div>
+
+            {/* Autre réalisation */}
+            <div className="mt-4 pt-4 border-t border-[#2998a6]/20">
+              <h4 className="text-sm font-semibold text-white mb-3">Découvrir aussi</h4>
+              <a
+                href="https://www.ener-immo92.fr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 transition-colors text-sm font-semibold group"
+              >
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                  />
+                </svg>
+                <span>eXp Mont-Valérien (92)</span>
+                <svg
+                  className="w-3 h-3 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </a>
+              <p className="text-xs text-gray-400 mt-2">Notre équipe dans les Hauts-de-Seine</p>
+            </div>
           </div>
 
           {/* Liens rapides */}
@@ -214,10 +254,10 @@ export default function Footer() {
                   />
                 </svg>
                 <a
-                  href="mailto:contact@exp-normandie.fr"
+                  href="mailto:contact@exp-gisors.fr"
                   className="text-sm text-gray-300/80 hover:text-white transition-colors"
                 >
-                  contact@exp-normandie.fr
+                  contact@exp-gisors.fr
                 </a>
               </li>
               <li className="flex items-center">

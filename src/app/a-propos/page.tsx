@@ -22,7 +22,7 @@ export default function AProposPage() {
         <motion.div style={{ scale }} className="absolute inset-0">
           <Image
             src="/normandie.jpg"
-            alt="À propos - Normandie"
+            alt="À propos - eXp Realty"
             fill
             className="object-cover"
             priority
@@ -179,7 +179,7 @@ export default function AProposPage() {
                       Appeler
                     </a>
                     <a
-                      href="mailto:vincent@normandie-immo.fr"
+                      href="mailto:vincent@exp-gisors.fr"
                       className="flex items-center justify-center gap-2 px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-[#2998a6] hover:text-[#0d6c8a] transition-all"
                     >
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

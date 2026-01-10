@@ -2,8 +2,36 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useState, useMemo } from "react";
 import Button from "@/components/Button";
+import PropertyCard from "@/components/PropertyCard";
+import { getAllProperties, Property } from "@/data/properties";
+
+type PropertyType = "all" | "maison" | "appartement" | "terrain";
+type PriceRange = "all" | "0-200000" | "200000-500000" | "500000-1000000" | "1000000+";
+type SortOption = "price-asc" | "price-desc" | "surface-desc" | "newest";
+
+const priceRanges = [
+  { value: "all" as PriceRange, label: "Tous les prix" },
+  { value: "0-200000" as PriceRange, label: "Moins de 200 000 €" },
+  { value: "200000-500000" as PriceRange, label: "200 000 € - 500 000 €" },
+  { value: "500000-1000000" as PriceRange, label: "500 000 € - 1 000 000 €" },
+  { value: "1000000+" as PriceRange, label: "Plus de 1 000 000 €" },
+];
+
+const propertyTypes = [
+  { value: "all" as PropertyType, label: "Tous les biens", icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" },
+  { value: "maison" as PropertyType, label: "Maisons", icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" },
+  { value: "appartement" as PropertyType, label: "Appartements", icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" },
+  { value: "terrain" as PropertyType, label: "Terrains", icon: "M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" },
+];
+
+const sortOptions = [
+  { value: "newest" as SortOption, label: "Plus récents" },
+  { value: "price-asc" as SortOption, label: "Prix croissant" },
+  { value: "price-desc" as SortOption, label: "Prix décroissant" },
+  { value: "surface-desc" as SortOption, label: "Surface décroissante" },
+];
 
 export default function BiensAVendrePage() {
   const headerRef = useRef(null);
@@ -15,6 +43,69 @@ export default function BiensAVendrePage() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
   const y = useTransform(scrollYProgress, [0, 1], [0, 150]);
+
+  const allProperties = getAllProperties();
+  
+  // États des filtres
+  const [selectedType, setSelectedType] = useState<PropertyType>("all");
+  const [selectedPriceRange, setSelectedPriceRange] = useState<PriceRange>("all");
+  const [sortBy, setSortBy] = useState<SortOption>("newest");
+  const [showFilters, setShowFilters] = useState(false);
+
+  // Filtrage et tri des propriétés
+  const properties = useMemo(() => {
+    let filtered = [...allProperties];
+
+    // Filtre par type
+    if (selectedType !== "all") {
+      filtered = filtered.filter((p) => p.type === selectedType);
+    }
+
+    // Filtre par prix
+    if (selectedPriceRange !== "all") {
+      filtered = filtered.filter((p) => {
+        switch (selectedPriceRange) {
+          case "0-200000":
+            return p.price < 200000;
+          case "200000-500000":
+            return p.price >= 200000 && p.price < 500000;
+          case "500000-1000000":
+            return p.price >= 500000 && p.price < 1000000;
+          case "1000000+":
+            return p.price >= 1000000;
+          default:
+            return true;
+        }
+      });
+    }
+
+    // Tri
+    switch (sortBy) {
+      case "price-asc":
+        filtered.sort((a, b) => a.price - b.price);
+        break;
+      case "price-desc":
+        filtered.sort((a, b) => b.price - a.price);
+        break;
+      case "surface-desc":
+        filtered.sort((a, b) => b.surface - a.surface);
+        break;
+      case "newest":
+      default:
+        filtered.sort((a, b) => parseInt(b.id) - parseInt(a.id));
+        break;
+    }
+
+    return filtered;
+  }, [allProperties, selectedType, selectedPriceRange, sortBy]);
+
+  const activeFiltersCount = (selectedType !== "all" ? 1 : 0) + (selectedPriceRange !== "all" ? 1 : 0);
+
+  const resetFilters = () => {
+    setSelectedType("all");
+    setSelectedPriceRange("all");
+    setSortBy("newest");
+  };
 
   const zones = [
     {
@@ -68,7 +159,7 @@ export default function BiensAVendrePage() {
         <motion.div style={{ y }} className="absolute inset-0">
           <Image
             src="/normandie.jpg"
-            alt="Biens à vendre - Normandie"
+            alt="Biens à vendre"
             fill
             className="object-cover"
             priority
@@ -88,22 +179,22 @@ export default function BiensAVendrePage() {
               transition={{ duration: 0.8 }}
             >
               <span className="inline-block bg-white/10 backdrop-blur-md px-6 py-2 rounded-full text-white font-semibold text-sm mb-6 border border-white/20">
-                Biens disponibles autour de Gisors
+                {allProperties.length} bien{allProperties.length > 1 ? "s" : ""} disponible{allProperties.length > 1 ? "s" : ""} • Secteur Gisors
               </span>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 leading-tight">
-                Trouvez votre bien
+                Nos biens
                 <br />
                 <span className="bg-gradient-to-r from-[#2998a6] via-[#0d6c8a] to-[#2998a6] bg-clip-text text-transparent">
-                  dans notre secteur
+                  à vendre
                 </span>
               </h1>
               <p className="text-xl sm:text-2xl text-white/90 max-w-3xl mx-auto mb-12">
-                Maisons de charme, appartements modernes et terrains exceptionnels
+                Découvrez notre sélection de propriétés sur le secteur de Gisors et ses environs
               </p>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
                 <Button
@@ -111,7 +202,7 @@ export default function BiensAVendrePage() {
                   variant="accent"
                   className="text-lg px-10 py-5 shadow-2xl hover:shadow-accent-500/50"
                 >
-                  Découvrir nos biens
+                  Voir les annonces
                   <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                   </svg>
@@ -140,77 +231,228 @@ export default function BiensAVendrePage() {
         </motion.div>
       </section>
 
-      {/* Section Coming Soon Premium */}
+      {/* Section Annonces */}
       <section id="biens" className="py-32 bg-gradient-to-b from-white via-gray-50 to-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <div className="relative inline-block mb-8">
-              <motion.div
-                animate={{
-                  scale: [1, 1.2, 1],
-                  rotate: [0, 10, -10, 0],
-                }}
-                transition={{ duration: 4, repeat: Infinity }}
-                className="inline-flex items-center justify-center w-28 h-28 bg-gradient-to-br from-[#1e3771] via-[#2998a6] to-[#0d6c8a] rounded-3xl shadow-2xl"
-              >
-                <svg className="w-16 h-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
-              </motion.div>
-              <motion.div
-                animate={{ scale: [1, 1.3, 1], opacity: [0.5, 0, 0.5] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="absolute inset-0 bg-[#2998a6] rounded-3xl blur-2xl"
-              />
-            </div>
-
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Nos biens arrivent{" "}
-              <span className="bg-gradient-to-r from-[#1e3771] to-[#2998a6] bg-clip-text text-transparent">
-                très bientôt
-              </span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Nous préparons actuellement une sélection exceptionnelle de propriétés
-              en Normandie. En attendant, profitez de nos services pour vendre votre bien.
-            </p>
-          </motion.div>
-
-          {/* Avantages en attendant */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-[#1e3771]/5 via-[#2998a6]/10 to-[#2998a6]/15 rounded-3xl p-10 lg:p-14 shadow-xl border border-[#2998a6]/20 mb-16"
+            className="text-center mb-12"
+          >
+            <span className="text-[#0d6c8a] font-semibold text-sm uppercase tracking-wide mb-4 block">
+              Notre sélection
+            </span>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+              Biens <span className="bg-gradient-to-r from-[#1e3771] to-[#2998a6] bg-clip-text text-transparent">disponibles</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Maisons de charme, appartements modernes et terrains exceptionnels sur le secteur de Gisors
+            </p>
+          </motion.div>
+
+          {/* Barre de filtres */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            {/* Filtres par type - toujours visible */}
+            <div className="flex flex-wrap justify-center gap-3 mb-6">
+              {propertyTypes.map((type) => (
+                <button
+                  key={type.value}
+                  onClick={() => setSelectedType(type.value)}
+                  className={`inline-flex items-center gap-2 px-5 py-3 rounded-xl font-medium transition-all ${
+                    selectedType === type.value
+                      ? "bg-[#1e3771] text-white shadow-lg"
+                      : "bg-white text-gray-700 border border-gray-200 hover:border-[#2998a6] hover:text-[#0d6c8a]"
+                  }`}
+                >
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={type.icon} />
+                  </svg>
+                  {type.label}
+                </button>
+              ))}
+      </div>
+
+            {/* Filtres avancés et tri */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              {/* Bouton filtres avancés (mobile) */}
+              <button
+                onClick={() => setShowFilters(!showFilters)}
+                className="sm:hidden inline-flex items-center gap-2 px-5 py-3 bg-white rounded-xl border border-gray-200 text-gray-700 font-medium"
+              >
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+                </svg>
+                Filtres
+                {activeFiltersCount > 0 && (
+                  <span className="bg-[#2998a6] text-white text-xs px-2 py-0.5 rounded-full">
+                    {activeFiltersCount}
+                  </span>
+                )}
+              </button>
+
+              {/* Filtres desktop / mobile expanded */}
+              <div className={`${showFilters ? "flex" : "hidden"} sm:flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center`}>
+                {/* Filtre prix */}
+                <select
+                  value={selectedPriceRange}
+                  onChange={(e) => setSelectedPriceRange(e.target.value as PriceRange)}
+                  className="px-5 py-3 bg-white rounded-xl border border-gray-200 text-gray-700 font-medium focus:outline-none focus:ring-2 focus:ring-[#2998a6] focus:border-transparent cursor-pointer"
+                >
+                  {priceRanges.map((range) => (
+                    <option key={range.value} value={range.value}>
+                      {range.label}
+                    </option>
+                  ))}
+                </select>
+
+                {/* Tri */}
+                <select
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value as SortOption)}
+                  className="px-5 py-3 bg-white rounded-xl border border-gray-200 text-gray-700 font-medium focus:outline-none focus:ring-2 focus:ring-[#2998a6] focus:border-transparent cursor-pointer"
+                >
+                  {sortOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+
+                {/* Bouton reset */}
+                {activeFiltersCount > 0 && (
+                  <button
+                    onClick={resetFilters}
+                    className="inline-flex items-center gap-2 px-5 py-3 text-red-600 hover:bg-red-50 rounded-xl font-medium transition-colors"
+                  >
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                    Réinitialiser
+                  </button>
+                )}
+              </div>
+            </div>
+
+            {/* Compteur de résultats */}
+            <div className="text-center mt-6 text-gray-500">
+              <span className="font-semibold text-[#1e3771]">{properties.length}</span> bien{properties.length > 1 ? "s" : ""} trouvé{properties.length > 1 ? "s" : ""}
+              {activeFiltersCount > 0 && (
+                <span> avec les filtres appliqués</span>
+              )}
+            </div>
+          </motion.div>
+
+          {properties.length > 0 ? (
+            <>
+              {/* Grille des annonces */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                {properties.map((property, index) => (
+                  <PropertyCard key={property.id} property={property} index={index} />
+                ))}
+              </div>
+
+              {/* CTA Contact */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-[#1e3771]/5 via-[#2998a6]/10 to-[#2998a6]/15 rounded-3xl p-10 text-center border border-[#2998a6]/20"
+              >
+                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                  Vous ne trouvez pas votre bonheur ?
+                </h3>
+                <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+                  Nous avons accès à des biens en avant-première et pouvons vous accompagner 
+                  dans votre recherche personnalisée.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button href="/contact" variant="accent" className="text-lg px-8 py-4">
+                    Contactez-nous
+                  </Button>
+                  <Button href="/nos-services" variant="outline-dark" className="text-lg px-8 py-4">
+                    Nos services
+                  </Button>
+                </div>
+              </motion.div>
+            </>
+          ) : (
+            /* Message si aucun résultat */
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-center py-16"
+            >
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-gray-100 rounded-2xl mb-6">
+                <svg className="w-10 h-10 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                Aucun bien ne correspond à vos critères
+              </h3>
+              <p className="text-gray-600 mb-6 max-w-md mx-auto">
+                Essayez de modifier vos filtres ou contactez-nous pour une recherche personnalisée.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button
+                  onClick={resetFilters}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#1e3771] text-white font-semibold rounded-xl hover:bg-[#0d6c8a] transition-colors"
+                >
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                  </svg>
+                  Réinitialiser les filtres
+                </button>
+                <Button href="/contact" variant="outline-dark" className="px-6 py-3">
+                  Nous contacter
+                </Button>
+              </div>
+            </motion.div>
+          )}
+        </div>
+      </section>
+
+      {/* Section Services Premium */}
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-br from-[#1e3771]/5 via-[#2998a6]/10 to-[#2998a6]/15 rounded-3xl p-10 lg:p-14 shadow-xl border border-[#2998a6]/20"
           >
             <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center">
-              En attendant, profitez de nos services premium
+              Nos services pour vous accompagner
             </h3>
 
             <div className="grid md:grid-cols-2 gap-6 mb-10">
               {[
+                {
+                  title: "Accompagnement personnalisé",
+                  description: "Un suivi sur-mesure adapté à votre projet et vos objectifs",
+                  icon: (
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                  ),
+                },
                 {
                   title: "Estimation gratuite",
                   description: "Analyse précise de votre bien sous 48h",
                   icon: (
                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                    </svg>
-                  ),
-                },
-                {
-                  title: "Conseil personnalisé",
-                  description: "Un accompagnement adapté à votre projet et vos objectifs",
-                  icon: (
-                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
                   ),
                 },
@@ -255,37 +497,11 @@ export default function BiensAVendrePage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button href="/contact" variant="accent" className="text-lg px-10 py-4">
-                <svg className="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-                Estimation gratuite
+                Demander un accompagnement
               </Button>
               <Button href="/nos-services" variant="outline-dark" className="text-lg px-10 py-4">
                 Découvrir nos services
               </Button>
-            </div>
-          </motion.div>
-
-          {/* Notification badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-amber-100 to-yellow-100 text-amber-900 px-8 py-4 rounded-2xl border-2 border-amber-300 shadow-lg">
-              <motion.div
-                animate={{ rotate: [0, 15, -15, 0] }}
-                transition={{ duration: 1, repeat: Infinity, repeatDelay: 2 }}
-              >
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
-                </svg>
-              </motion.div>
-              <span className="font-bold">
-                Contactez-nous pour être informé en priorité des nouvelles annonces
-              </span>
             </div>
           </motion.div>
         </div>
@@ -409,21 +625,21 @@ export default function BiensAVendrePage() {
             >
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
                 Vous souhaitez vendre ?
-              </h2>
+          </h2>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
                 Confiez-nous la vente de votre propriété et bénéficiez
-                de notre expertise locale, notre réseau international eXp et nos
+                de notre accompagnement personnalisé, notre réseau international eXp et nos
                 solutions de rénovation énergétique.
               </p>
 
               <div className="space-y-4 mb-10">
                 {[
+                  "Accompagnement personnalisé à chaque étape",
                   "Estimation gratuite sous 48h",
-                  "Conseil personnalisé",
                   "Valorisation de votre bien",
                   "Diffusion sur 50+ portails",
                   "Réseau international de 89 000 agents",
-                  "Accompagnement jusqu'à la signature",
+                  "Suivi jusqu'à la signature",
                 ].map((item, index) => (
                   <motion.div
                     key={item}
@@ -449,9 +665,6 @@ export default function BiensAVendrePage() {
                   variant="accent"
                   className="text-lg px-10 py-5 shadow-2xl hover:shadow-accent-500/50"
                 >
-                  <svg className="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
                   Estimation gratuite
                 </Button>
                 <Button
@@ -460,7 +673,7 @@ export default function BiensAVendrePage() {
                   className="text-lg px-10 py-5"
                 >
                   Nos services
-                </Button>
+          </Button>
               </div>
             </motion.div>
           </div>

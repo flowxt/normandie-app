@@ -74,7 +74,7 @@ export default function ContactPage() {
         <motion.div style={{ scale }} className="absolute inset-0">
           <Image
             src="/normandie.jpg"
-            alt="Contact - Normandie"
+            alt="Contact"
             fill
             className="object-cover"
             priority
@@ -216,7 +216,7 @@ export default function ContactPage() {
                     </div>
                   </a>
                   <a
-                    href="mailto:contact@normandie-immobilier.fr"
+                    href="mailto:contact@exp-gisors.fr"
                     className="flex items-center gap-3 text-gray-700 hover:text-cyan-600 transition-colors group"
                   >
                     <div className="w-10 h-10 bg-gradient-to-r from-navy-600 to-cyan-500 text-white rounded-lg flex items-center justify-center group-hover:opacity-90 transition-all">
@@ -226,7 +226,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">Email</div>
-                      <div className="font-semibold">contact@normandie-immo.fr</div>
+                      <div className="font-semibold">contact@exp-gisors.fr</div>
                     </div>
                   </a>
                 </div>

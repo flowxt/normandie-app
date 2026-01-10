@@ -71,24 +71,6 @@ export default function NosServicesPage() {
     {
       icon: (
         <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-      ),
-      title: "Mise en valeur professionnelle",
-      description: "Le home staging et les photos professionnelles font toute la différence. Nous valorisons votre bien pour attirer les acheteurs les plus exigeants.",
-      features: [
-        "Reportage photo HD professionnel",
-        "Visite virtuelle 3D",
-        "Vidéo promotionnelle par drone",
-        "Home staging si nécessaire",
-      ],
-      color: "purple",
-      image: "/interieur.png",
-    },
-    {
-      icon: (
-        <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
         </svg>
       ),
@@ -168,7 +150,7 @@ export default function NosServicesPage() {
         <motion.div style={{ scale }} className="absolute inset-0">
           <Image
             src="/normandie.jpg"
-            alt="Services - Normandie"
+            alt="Services immobiliers"
             fill
             className="object-cover"
             priority
@@ -231,7 +213,7 @@ export default function NosServicesPage() {
               Un accompagnement <span className="bg-gradient-to-r from-[#1e3771] to-[#2998a6] bg-clip-text text-transparent">360°</span>
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Chez eXp France Normandie, nous ne nous contentons pas de vendre des biens.
+              Chez eXp Realty, nous ne nous contentons pas de vendre des biens.
               Nous vous accompagnons dans chaque aspect de votre projet immobilier avec des
               solutions innovantes et personnalisées.
             </p>
@@ -424,7 +406,7 @@ export default function NosServicesPage() {
             </h2>
             <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
               Contactez-nous dès maintenant pour une estimation gratuite et découvrez
-              comment nous pouvons valoriser votre bien en Normandie.
+              comment nous pouvons valoriser votre bien.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
