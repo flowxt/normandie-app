@@ -817,14 +817,12 @@ export default function BiensAVendrePage() {
 
                   {/* CTA */}
                   <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                    <Button
+                    <a
                       href="/contact"
-                      variant="accent"
-                      className="flex-1 justify-center"
-                      onClick={() => setShowBaremeModal(false)}
+                      className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-[#1e3771] to-[#2998a6] text-white font-semibold rounded-xl hover:from-[#0c233c] hover:to-[#0d6c8a] transition-all shadow-lg hover:shadow-xl"
                     >
                       Demander une estimation
-                    </Button>
+                    </a>
                     <button
                       onClick={() => setShowBaremeModal(false)}
                       className="flex-1 px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-[#2998a6] hover:text-[#0d6c8a] transition-all"
