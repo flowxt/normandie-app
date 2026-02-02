@@ -170,7 +170,7 @@ export default function AProposPage() {
                   {/* Contact rapide */}
                   <div className="flex flex-col sm:flex-row gap-3">
                     <a
-                      href="tel:+33123456789"
+                      href="tel:+33662155757"
                       className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-[#1e3771] to-[#2998a6] text-white font-semibold rounded-xl hover:shadow-lg transition-all hover:scale-105"
                     >
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -260,6 +260,149 @@ export default function AProposPage() {
               />
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Accompagnements personnalisés */}
+      <section className="py-32 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="text-[#0d6c8a] font-semibold text-sm uppercase tracking-wide mb-4 block">
+              Nos accompagnements
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Un accompagnement{" "}
+              <span className="bg-gradient-to-r from-[#1e3771] to-[#2998a6] bg-clip-text text-transparent">
+                sur-mesure
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Au-delà de la vente, nous vous accompagnons dans tous vos projets immobiliers
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: (
+                  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                  </svg>
+                ),
+                title: "Division de terrain",
+                description: "Études de faisabilité, démarches administratives et optimisation de votre parcelle pour maximiser sa valeur et créer de nouvelles opportunités.",
+                gradient: "from-[#1e3771] to-[#2998a6]",
+              },
+              {
+                icon: (
+                  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                  </svg>
+                ),
+                title: "Études techniques",
+                description: "Analyse de votre projet, études d'urbanisme, diagnostic de constructibilité et conseil sur les possibilités d'aménagement.",
+                gradient: "from-[#2998a6] to-[#0d6c8a]",
+              },
+              {
+                icon: (
+                  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                ),
+                title: "Aides à la rénovation",
+                description: "Accompagnement complet pour vos travaux de rénovation énergétique : panneaux solaires, pompes à chaleur, isolation. Aides de l'État jusqu'à 70%.",
+                gradient: "from-[#0d6c8a] to-[#2998a6]",
+                badge: "Partenaire ENRLUX",
+              },
+              {
+                icon: (
+                  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                ),
+                title: "Valorisation immobilière",
+                description: "Conseils pour optimiser la valeur de votre bien avant la vente : home staging, petits travaux, optimisation fiscale.",
+                gradient: "from-[#2998a6] to-[#06465c]",
+              },
+              {
+                icon: (
+                  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                ),
+                title: "Accompagnement administratif",
+                description: "Suivi complet de vos démarches : permis de construire, déclarations préalables, constitution de dossiers administratifs.",
+                gradient: "from-[#1e3771] to-[#0d6c8a]",
+              },
+              {
+                icon: (
+                  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                ),
+                title: "Mise en relation professionnels",
+                description: "Accès à notre réseau de professionnels qualifiés : architectes, géomètres, artisans, notaires, experts en rénovation.",
+                gradient: "from-[#0d6c8a] to-[#1e3771]",
+              },
+            ].map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -10 }}
+                className="group relative"
+              >
+                <div className="h-full bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border border-gray-100">
+                  {service.badge && (
+                    <div className="absolute -top-3 -right-3 bg-gradient-to-r from-[#2998a6] to-[#0d6c8a] text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg flex items-center gap-1">
+                      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                      <span>{service.badge}</span>
+                    </div>
+                  )}
+                  <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${service.gradient} text-white rounded-2xl mb-6 group-hover:scale-110 transition-transform`}>
+                    {service.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            viewport={{ once: true }}
+            className="mt-16 text-center"
+          >
+            <div className="bg-gradient-to-br from-[#1e3771]/5 to-[#2998a6]/10 rounded-2xl p-8 border border-[#2998a6]/20 max-w-3xl mx-auto">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Un projet en tête ?
+              </h3>
+              <p className="text-gray-600 mb-6">
+                Quel que soit votre besoin, nous mettons notre expertise à votre service pour vous accompagner dans la réussite de votre projet.
+              </p>
+              <Button href="/contact" variant="accent" className="text-lg px-8 py-4">
+                Parlons de votre projet
+              </Button>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -388,7 +531,7 @@ export default function AProposPage() {
                 Estimation gratuite
               </Button>
               <Button
-                href="tel:+33123456789"
+                href="tel:+33662155757"
                 variant="outline"
                 className="w-full sm:w-auto text-lg px-12 py-6"
               >

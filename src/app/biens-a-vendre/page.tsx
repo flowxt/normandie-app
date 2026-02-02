@@ -1,8 +1,8 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useRef, useState, useMemo } from "react";
+import { useRef, useState, useMemo, useEffect } from "react";
 import Button from "@/components/Button";
 import PropertyCard from "@/components/PropertyCard";
 import { getAllProperties, Property } from "@/data/properties";
@@ -49,8 +49,9 @@ export default function BiensAVendrePage() {
   // États des filtres
   const [selectedType, setSelectedType] = useState<PropertyType>("all");
   const [selectedPriceRange, setSelectedPriceRange] = useState<PriceRange>("all");
-  const [sortBy, setSortBy] = useState<SortOption>("newest");
+  const [sortBy, setSortBy] = useState<SortOption>("price-asc");
   const [showFilters, setShowFilters] = useState(false);
+  const [showBaremeModal, setShowBaremeModal] = useState(false);
 
   // Filtrage et tri des propriétés
   const properties = useMemo(() => {
@@ -104,8 +105,20 @@ export default function BiensAVendrePage() {
   const resetFilters = () => {
     setSelectedType("all");
     setSelectedPriceRange("all");
-    setSortBy("newest");
+    setSortBy("price-asc");
   };
+
+  // Bloquer le scroll quand la modale est ouverte
+  useEffect(() => {
+    if (showBaremeModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [showBaremeModal]);
 
   const zones = [
     {
@@ -247,9 +260,25 @@ export default function BiensAVendrePage() {
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
               Biens <span className="bg-gradient-to-r from-[#1e3771] to-[#2998a6] bg-clip-text text-transparent">disponibles</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Maisons de charme, appartements modernes et terrains exceptionnels sur le secteur de Gisors
             </p>
+            <motion.button
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true }}
+              onClick={() => setShowBaremeModal(true)}
+              className="mt-6 inline-flex items-center gap-2 text-sm text-[#0d6c8a] hover:text-[#1e3771] font-semibold transition-colors group"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Voir notre barème d'honoraires
+              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </motion.button>
           </motion.div>
 
           {/* Barre de filtres */}
@@ -679,6 +708,136 @@ export default function BiensAVendrePage() {
           </div>
         </div>
       </section>
+
+      {/* Modale Barème d'honoraires */}
+      <AnimatePresence>
+        {showBaremeModal && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm"
+              onClick={() => setShowBaremeModal(false)}
+            />
+            
+            {/* Modal */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="fixed inset-4 sm:inset-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 z-[101] max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            >
+              <div className="bg-white rounded-3xl shadow-2xl">
+                {/* Header */}
+                <div className="sticky top-0 bg-gradient-to-r from-[#1e3771] to-[#2998a6] text-white px-6 sm:px-8 py-6 rounded-t-3xl flex items-center justify-between">
+                  <div>
+                    <h3 className="text-2xl sm:text-3xl font-bold mb-2">Barème d'honoraires</h3>
+                    <p className="text-white/90 text-sm">Nos tarifs transparents</p>
+                  </div>
+                  <button
+                    onClick={() => setShowBaremeModal(false)}
+                    className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                  >
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+
+                {/* Content */}
+                <div className="p-6 sm:p-8">
+                  {/* Info importantes */}
+                  <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6">
+                    <p className="text-sm text-blue-900 leading-relaxed">
+                      Ces taux s'entendent hors frais de rédaction d'actes. Nos tarifs sont rédigés toutes taxes comprises au taux de TVA en vigueur inclus.
+                    </p>
+                  </div>
+
+                  <div className="space-y-4 mb-6">
+                    <p className="text-gray-700 leading-relaxed">
+                      En dehors des forfaits, il conviendra d'appliquer le pourcentage correspondant à la tranche du prix de vente.
+                    </p>
+                    <p className="text-gray-700 leading-relaxed">
+                      <strong>Nos honoraires sont à la charge du vendeur</strong> sauf convention contraire précisée dans le mandat.
+                    </p>
+                    <p className="text-gray-700 leading-relaxed">
+                      Ils comprennent les prestations de visite, de négociation et de constitution du dossier de vente.
+                    </p>
+                  </div>
+
+                  {/* Tableau des tarifs */}
+                  <div className="overflow-x-auto">
+                    <table className="w-full border-collapse">
+                      <thead>
+                        <tr className="bg-gradient-to-r from-[#1e3771] to-[#2998a6] text-white">
+                          <th className="px-4 py-3 text-left rounded-tl-xl font-bold">Prix de vente</th>
+                          <th className="px-4 py-3 text-left rounded-tr-xl font-bold">Honoraires TTC*</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-200">
+                        <tr className="hover:bg-gray-50 transition-colors">
+                          <td className="px-4 py-4 font-medium text-gray-900">de 0 à 100 000 €</td>
+                          <td className="px-4 py-4 text-gray-700">10 000 €</td>
+                        </tr>
+                        <tr className="hover:bg-gray-50 transition-colors">
+                          <td className="px-4 py-4 font-medium text-gray-900">de 100 001 à 200 000 €</td>
+                          <td className="px-4 py-4 text-gray-700">9 %</td>
+                        </tr>
+                        <tr className="hover:bg-gray-50 transition-colors">
+                          <td className="px-4 py-4 font-medium text-gray-900">de 200 001 à 300 000 €</td>
+                          <td className="px-4 py-4 text-gray-700">8 %</td>
+                        </tr>
+                        <tr className="hover:bg-gray-50 transition-colors">
+                          <td className="px-4 py-4 font-medium text-gray-900">de 300 001 € à 400 000 €</td>
+                          <td className="px-4 py-4 text-gray-700">7 %</td>
+                        </tr>
+                        <tr className="hover:bg-gray-50 transition-colors">
+                          <td className="px-4 py-4 font-medium text-gray-900">Supérieur à 400 000 €</td>
+                          <td className="px-4 py-4 text-gray-700">6 %</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <p className="text-xs text-gray-500 italic mt-4">
+                    * Honoraires maximum et cumulables par tranche
+                  </p>
+
+                  {/* Note finale */}
+                  <div className="mt-6 p-4 bg-gray-50 border border-gray-200 rounded-xl">
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      Il est précisé que dans le cadre d'une délégation de mandat consentie par un autre professionnel de l'immobilier 
+                      (agence, promoteur, etc.), le barème applicable reste celui de l'agence titulaire du mandat.
+                    </p>
+                  </div>
+
+                  {/* CTA */}
+                  <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                    <Button
+                      href="/contact"
+                      variant="accent"
+                      className="flex-1 justify-center"
+                      onClick={() => setShowBaremeModal(false)}
+                    >
+                      Demander une estimation
+                    </Button>
+                    <button
+                      onClick={() => setShowBaremeModal(false)}
+                      className="flex-1 px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-[#2998a6] hover:text-[#0d6c8a] transition-all"
+                    >
+                      Fermer
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
 
     </>
   );

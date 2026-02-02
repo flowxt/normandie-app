@@ -67,9 +67,9 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Nos services */}
+          {/* Nos accompagnements */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold text-white">Nos services</h3>
+            <h3 className="text-lg font-bold text-white">Nos Accompagnements</h3>
             <ul className="space-y-3">
               {navigation.services.map((item) => (
                 <li key={item.name}>

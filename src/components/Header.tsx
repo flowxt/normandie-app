@@ -38,7 +38,7 @@ export default function Header() {
 
   const navigation = [
     { name: "Accueil", href: "/" },
-    { name: "Nos services", href: "/nos-services" },
+    { name: "Nos Accompagnements", href: "/nos-services" },
     { name: "Biens à vendre", href: "/biens-a-vendre" },
     { name: "À propos", href: "/a-propos" },
     { name: "Contact", href: "/contact" },
