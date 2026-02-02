@@ -396,6 +396,72 @@ Prix hors honoraires : 172 800 €
 
 Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : georisques.gouv.fr.`,
   },
+  {
+    id: "6",
+    slug: "maison-familiale-mesnil-theribus",
+    title: "Maison familiale sans vis-à-vis - Le Mesnil-Théribus",
+    type: "maison",
+    city: "Le Mesnil-Théribus",
+    postalCode: "60240",
+    price: 332800,
+    surface: 153,
+    rooms: 7,
+    bedrooms: 4,
+    bathrooms: 1,
+    showerRooms: 1,
+    toilets: 2,
+    landSurface: 2633,
+    parking: 2,
+    features: [
+      "Sans vis-à-vis",
+      "Jardin clos 2600 m²",
+      "Terrasse",
+      "Séjour cathédrale",
+      "Cuisine américaine",
+      "Bureau",
+      "Mezzanine bureau",
+      "Chambres avec dressing",
+      "Garage double",
+      "Exposition Sud-Ouest",
+      "Chauffage électrique",
+    ],
+    dpe: "D",
+    ges: "B",
+    reference: "VM6578",
+    mandate: "12410",
+    mainImage: "/biens/maison-chaumont/facade.jpeg",
+    images: [
+      "/biens/maison-chaumont/facade.jpeg",
+      "/biens/maison-chaumont/arriere.jpeg",
+      "/biens/maison-chaumont/salon.jpeg",
+      "/biens/maison-chaumont/cuisine.jpeg",
+      "/biens/maison-chaumont/entrée.jpeg",
+      "/biens/maison-chaumont/bureau.jpeg",
+      "/biens/maison-chaumont/chambre.jpeg",
+      "/biens/maison-chaumont/chambre2.jpeg",
+      "/biens/maison-chaumont/chambre3.jpeg",
+      "/biens/maison-chaumont/sdb.jpeg",
+    ],
+    address: "1 Sente du Tour de Ville, Le Mesnil-Théribus 60240",
+    status: "disponible",
+    shortDescription:
+      "Maison familiale sans vis-à-vis nichée dans un écrin de verdure à 5 min de Chaumont-en-Vexin. 7 pièces, 153 m², jardin clos 2600 m², garage double.",
+    description: `Le Mesnil-Théribus à 5 minutes de Chaumont-en-Vexin – Maison familiale sans vis-à-vis nichée dans un écrin de verdure.
+
+Elle vous offre au rez-de-chaussée un séjour cathédrale baigné de lumière donnant sur une terrasse, une cuisine américaine ouverte sur la salle à manger et le séjour, deux chambres, une salle d'eau, wc séparés et un bureau.
+
+À l'étage, la mezzanine est aménagée en espace bureau, deux chambres avec dressing intégré et une pièce supplémentaire offrant la possibilité de créer une deuxième salle d'eau.
+
+Ce bien se complète d'un jardin clos de plus de 2600 m², parfait pour profiter des beaux jours, et d'un garage double. Venez découvrir ce havre de paix à quelques minutes des commodités.
+
+Honoraires inclus de 4 % TTC à la charge de l'acquéreur. Prix hors honoraires : 320 000 €.
+
+Classe énergie D, Classe climat B.
+
+Montant estimé des dépenses annuelles d'énergie pour un usage standard : entre 2 700 € et 3 680 € sur les années 2021, 2022 et 2023 (abonnements compris).
+
+Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : georisques.gouv.fr.`,
+  },
 ];
 
 export function getPropertyBySlug(slug: string): Property | undefined {
