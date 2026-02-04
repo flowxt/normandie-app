@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "verification_code_here", // À remplacer par le code Google Search Console
+    google: "88vtdilJhehfDBGvQNSZrHqAmFSaiTm_qrYl7Jc3f3I",
   },
 };
 
