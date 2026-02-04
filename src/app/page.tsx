@@ -61,12 +61,12 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
-              className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 leading-[1.1]"
+              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-[1.1]"
             >
-              Vendez votre bien
+              L'expertise et le conseil
               <br />
               <span className="bg-gradient-to-r from-[#2998a6] via-[#0d6c8a] to-[#2998a6] bg-clip-text text-transparent">
-                plus vite, plus cher
+                pour réussir votre projet immobilier
               </span>
             </motion.h1>
 
@@ -75,9 +75,11 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.6 }}
-              className="text-xl sm:text-2xl lg:text-3xl text-white/90 mb-4 max-w-4xl mx-auto font-light"
+              className="text-xl sm:text-2xl text-white/90 mb-4 max-w-4xl mx-auto font-light"
             >
-              Accompagnement personnalisé • Estimation précise • Conseil sur-mesure
+              Bénéficiez d'un accompagnement stratégique et humain.
+              <br className="hidden sm:block" />
+              De l'estimation précise à la signature, nous sécurisons chaque étape de votre vente.
             </motion.p>
 
             <motion.p
@@ -87,7 +89,7 @@ export default function Home() {
               className="text-lg sm:text-xl text-white/80 mb-12 max-w-3xl mx-auto"
             >
               Basé à Gisors, j'interviens sur un secteur local couvrant{" "}
-              <strong className="text-white">l'Eure, le Val-d'Oise, l'Oise</strong> et certaines communes limitrophes de Seine-Maritime.
+              <strong className="text-white">l'Eure (27), le Val-d'Oise (95), l'Oise (60)</strong> et certaines communes limitrophes de Seine-Maritime (76).
             </motion.p>
 
             {/* CTA Buttons */}
