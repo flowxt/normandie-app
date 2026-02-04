@@ -63,11 +63,9 @@ export default function Home() {
               transition={{ duration: 1, delay: 0.4 }}
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-[1.1]"
             >
-              L'expertise et le conseil
+              L'expertise et <span className="text-[#5eead4]">le conseil</span>
               <br />
-              <span className="bg-gradient-to-r from-[#2998a6] via-[#0d6c8a] to-[#2998a6] bg-clip-text text-transparent">
-                pour réussir votre projet immobilier
-              </span>
+              pour réussir <span className="text-[#5eead4]">votre projet immobilier</span>
             </motion.h1>
 
             {/* Sous-titre */}
