@@ -254,10 +254,10 @@ export default function Footer() {
                   />
                 </svg>
                 <a
-                  href="mailto:contact@exp-gisors.fr"
+                  href="mailto:contact@ener-immo92.fr"
                   className="text-sm text-gray-300/80 hover:text-white transition-colors"
                 >
-                  contact@exp-gisors.fr
+                  contact@ener-immo92.fr
                 </a>
               </li>
               <li className="flex items-center">
