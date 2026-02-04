@@ -175,9 +175,7 @@ export default function NosServicesPage() {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
                 Des services complets
                 <br />
-                <span className="bg-gradient-to-r from-[#2998a6] via-[#0d6c8a] to-[#2998a6] bg-clip-text text-transparent">
-                  pour votre réussite
-                </span>
+                <span className="text-[#5eead4]">pour votre réussite</span>
               </h1>
               <p className="text-xl sm:text-2xl text-white/90 max-w-3xl mx-auto mb-8">
                 De l&apos;estimation à la signature, nous vous accompagnons à chaque étape

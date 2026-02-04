@@ -197,9 +197,7 @@ export default function BiensAVendrePage() {
               <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 leading-tight">
                 Nos biens
                 <br />
-                <span className="bg-gradient-to-r from-[#2998a6] via-[#0d6c8a] to-[#2998a6] bg-clip-text text-transparent">
-                  à vendre
-                </span>
+                <span className="text-[#5eead4]">à vendre</span>
               </h1>
               <p className="text-xl sm:text-2xl text-white/90 max-w-3xl mx-auto mb-12">
                 Découvrez notre sélection de propriétés sur le secteur de Gisors et ses environs

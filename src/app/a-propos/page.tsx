@@ -47,9 +47,7 @@ export default function AProposPage() {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
                 Une expertise au service
                 <br />
-                <span className="bg-gradient-to-r from-[#2998a6] via-[#0d6c8a] to-[#2998a6] bg-clip-text text-transparent">
-                  de votre projet
-                </span>
+                <span className="text-[#5eead4]">de votre projet</span>
               </h1>
               <p className="text-xl sm:text-2xl text-white/90 max-w-3xl mx-auto">
                 Proximité, expertise et innovation pour votre réussite immobilière
