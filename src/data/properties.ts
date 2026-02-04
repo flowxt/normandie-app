@@ -462,6 +462,128 @@ Montant estimé des dépenses annuelles d'énergie pour un usage standard : entr
 
 Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : georisques.gouv.fr.`,
   },
+  {
+    id: "7",
+    slug: "appartement-pontoise",
+    title: "Appartement 2 pièces très bien situé - Pontoise",
+    type: "appartement",
+    city: "Pontoise",
+    postalCode: "95000",
+    price: 132900,
+    surface: 46.12,
+    rooms: 2,
+    bedrooms: 1,
+    bathrooms: 0,
+    showerRooms: 1,
+    toilets: 1,
+    landSurface: undefined,
+    parking: 0,
+    features: [
+      "Rez-de-chaussée",
+      "Cuisine aménagée",
+      "Cave",
+      "Local vélo",
+      "Digicode",
+      "Copropriété 2 lots",
+      "Proximité commerces",
+      "Stationnement facile",
+    ],
+    dpe: "F",
+    ges: "F",
+    reference: "VA9764",
+    mandate: "",
+    mainImage: "/biens/appartement_pontoise/pieces-vue.jpeg",
+    images: [
+      "/biens/appartement_pontoise/pieces-vue.jpeg",
+      "/biens/appartement_pontoise/pièce1.jpeg",
+      "/biens/appartement_pontoise/cuisine.jpeg",
+      "/biens/appartement_pontoise/lit.jpeg",
+      "/biens/appartement_pontoise/douche.jpeg",
+      "/biens/appartement_pontoise/console.jpeg",
+      "/biens/appartement_pontoise/exterieur.jpeg",
+      "/biens/appartement_pontoise/hall-immeuble.jpeg",
+    ],
+    address: "Pontoise 95000",
+    status: "disponible",
+    shortDescription:
+      "Idéal pour un couple ou une personne seule, appartement au RDC de 46 m² à Pontoise. Séjour, cuisine aménagée, chambre, salle d'eau, WC séparés, cave et local vélo.",
+    description: `Idéal pour un couple ou une personne seule, découvrez cet appartement au rez-de-chaussée de 46 m² situé à Pontoise, une ville dynamique.
+
+Cet espace de vie offre tout le confort nécessaire pour un cadre de vie agréable : un séjour, une cuisine aménagée, une chambre, une salle d'eau et des WC séparés.
+
+Ce bien est complété par une cave et un local à vélo. Vous apprécierez la proximité des services et des commodités locales, facilitant ainsi votre quotidien.
+
+L'appartement dispose également d'un digicode, garantissant une sécurité optimale et une tranquillité d'esprit pour ses habitants. Possibilité de se garer facilement.
+
+Honoraires inclus de 3.99% TTC à la charge de l'acquéreur. Prix hors honoraires : 127 800 €.
+
+Dans une copropriété de 2 lots. Quote-part moyenne du budget prévisionnel : 1 900 €/an. Aucune procédure n'est en cours.
+
+Classe énergie F, Classe climat F - Logement à consommation énergétique excessive.
+
+Montant estimé des dépenses annuelles d'énergie pour un usage standard : entre 940 € et 1 310 € sur les années 2021, 2022 et 2023 (abonnements compris).
+
+Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : georisques.gouv.fr.`,
+  },
+  {
+    id: "8",
+    slug: "appartement-saint-ouen-laumone",
+    title: "Appartement 3 pièces en excellent état - Saint-Ouen-l'Aumône",
+    type: "appartement",
+    city: "Saint-Ouen-l'Aumône",
+    postalCode: "95310",
+    price: 239000,
+    surface: 68.14,
+    rooms: 3,
+    bedrooms: 2,
+    bathrooms: 0,
+    showerRooms: 1,
+    toilets: 1,
+    landSurface: undefined,
+    parking: 2,
+    features: [
+      "Exclusivité",
+      "Excellent état",
+      "Balcon 10 m²",
+      "Box double (9m)",
+      "Parking sous-sol",
+      "Cuisine américaine équipée",
+      "Buanderie",
+      "Copropriété 232 lots",
+      "Proximité commerces",
+    ],
+    dpe: "C",
+    ges: "A",
+    reference: "VA31680",
+    mandate: "",
+    mainImage: "/biens/appt saint-ouen/salon.jpeg",
+    images: [
+      "/biens/appt saint-ouen/salon.jpeg",
+      "/biens/appt saint-ouen/salon1.jpeg",
+      "/biens/appt saint-ouen/cuisine.jpeg",
+      "/biens/appt saint-ouen/chambre.jpeg",
+      "/biens/appt saint-ouen/chmbre.jpeg",
+      "/biens/appt saint-ouen/sdb.jpeg",
+      "/biens/appt saint-ouen/terrasse.jpeg",
+    ],
+    address: "Saint-Ouen-l'Aumône 95310",
+    status: "disponible",
+    shortDescription:
+      "En exclusivité, appartement 3 pièces en excellent état de 68 m² avec balcon 10 m², box double et parking. Proche toutes commodités.",
+    description: `En exclusivité, appartement 3 pièces en excellent état de 68 m² avec séjour et cuisine américaine équipée, deux chambres, une salle d'eau, WC avec buanderie, agrémenté d'un balcon de 10 m².
+
+Ce bien se complète d'un box double (9 mètres de long) et d'un parking en sous-sol, proche de toutes commodités.
+
+Honoraires inclus de 4.17% TTC à la charge de l'acquéreur. Prix hors honoraires : 229 440 €.
+
+Dans une copropriété de 232 lots. Quote-part moyenne du budget prévisionnel : 1 712 €/an. Aucune procédure n'est en cours.
+
+Classe énergie C, Classe climat A.
+
+Montant estimé des dépenses annuelles d'énergie pour un usage standard : entre 960 € et 1 340 € sur les années 2021, 2022 et 2023 (abonnements compris).
+
+Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : georisques.gouv.fr.`,
+  },
 ];
 
 export function getPropertyBySlug(slug: string): Property | undefined {
