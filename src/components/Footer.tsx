@@ -254,10 +254,10 @@ export default function Footer() {
                   />
                 </svg>
                 <a
-                  href="mailto:contact@ener-immo92.fr"
+                  href="mailto:contact@immo-vexin-normandie.fr"
                   className="text-sm text-gray-300/80 hover:text-white transition-colors"
                 >
-                  contact@ener-immo92.fr
+                  contact@immo-vexin-normandie.fr
                 </a>
               </li>
               <li className="flex items-center">

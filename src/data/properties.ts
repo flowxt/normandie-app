@@ -584,6 +584,79 @@ Montant estimé des dépenses annuelles d'énergie pour un usage standard : entr
 
 Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : georisques.gouv.fr.`,
   },
+  {
+    id: "9",
+    slug: "maison-lumineuse-gournay-en-bray",
+    title: "Maison lumineuse avec espace extérieur généreux - Gournay-en-Bray",
+    type: "maison",
+    city: "Gournay-en-Bray",
+    postalCode: "76220",
+    price: 219000,
+    surface: 122,
+    rooms: 5,
+    bedrooms: 3,
+    bathrooms: 0,
+    showerRooms: 1,
+    toilets: 1,
+    landSurface: 500,
+    parking: 1,
+    features: [
+      "Entièrement rénovée",
+      "Terrasse vue dégagée",
+      "Jardin 500 m²",
+      "Garage",
+      "Buanderie",
+      "Dépendance avec pièce supplémentaire",
+      "Insert bois",
+      "Cuisine équipée",
+      "Placards",
+      "Exposition Sud",
+      "Vue dégagée",
+      "Cheminée",
+      "Assainissement individuel",
+    ],
+    dpe: "D",
+    ges: "B",
+    reference: "VM37242",
+    mandate: "16067",
+    mainImage: "/biens/maison-lumineuse/ext-1erephoto.jpeg",
+    images: [
+      "/biens/maison-lumineuse/ext-1erephoto.jpeg",
+      "/biens/maison-lumineuse/ext.jpeg",
+      "/biens/maison-lumineuse/salon.jpeg",
+      "/biens/maison-lumineuse/salon2.jpeg",
+      "/biens/maison-lumineuse/salon3.jpeg",
+      "/biens/maison-lumineuse/cuisine.jpeg",
+      "/biens/maison-lumineuse/chambre.jpeg",
+      "/biens/maison-lumineuse/chambre2.jpeg",
+      "/biens/maison-lumineuse/sdb.jpeg",
+    ],
+    address: "20 Les Bruyères, Gournay-en-Bray 76220",
+    status: "disponible",
+    shortDescription:
+      "Maison lumineuse entièrement rénovée de 122 m² sur 500 m² de terrain. 5 pièces, terrasse vue dégagée, garage et dépendance. À 30 min de Gisors.",
+    description: `À seulement quelques minutes de Gournay-en-Bray, à 30 minutes de Gisors et environ une heure du littoral, cette maison idéalement située à proximité des commerces et services vous attend.
+
+Entièrement rénovée avec soin, elle est prête à vous accueillir.
+
+Le rez-de-chaussée se compose d'une entrée avec rangement, d'une cuisine aménagée et équipée, ainsi que d'une vaste pièce de vie regroupant salon et salle à manger (45 m²), agrémentée d'un insert bois.
+
+À l'étage, un palier mène à trois chambres, dont deux pourvues de placards, ainsi qu'à une salle d'eau et un WC indépendant.
+
+Vous profiterez également d'une terrasse offrant une vue dégagée sur la nature.
+
+En dépendance, un garage, une buanderie et, à l'étage, une grande pièce pouvant faire office de chambre d'amis complètent l'ensemble.
+
+Le tout est implanté sur un terrain d'environ 500 m². Une visite suffit pour en tomber amoureux.
+
+Taxe foncière : 729 €/an.
+
+Classe énergie D, Classe climat B.
+
+Montant moyen estimé des dépenses annuelles d'énergie pour un usage standard : entre 1 750 € et 2 380 €.
+
+Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : georisques.gouv.fr.`,
+  },
 ];
 
 export function getPropertyBySlug(slug: string): Property | undefined {

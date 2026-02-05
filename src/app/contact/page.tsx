@@ -216,7 +216,7 @@ export default function ContactPage() {
                     </div>
                   </a>
                   <a
-                    href="mailto:contact@ener-immo92.fr"
+                    href="mailto:contact@immo-vexin-normandie.fr"
                     className="flex items-center gap-3 text-gray-700 hover:text-cyan-600 transition-colors group"
                   >
                     <div className="w-10 h-10 bg-gradient-to-r from-navy-600 to-cyan-500 text-white rounded-lg flex items-center justify-center group-hover:opacity-90 transition-all">
@@ -226,7 +226,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">Email</div>
-                      <div className="font-semibold">contact@ener-immo92.fr</div>
+                      <div className="font-semibold">contact@immo-vexin-normandie.fr</div>
                     </div>
                   </a>
                 </div>
