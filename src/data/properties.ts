@@ -657,6 +657,81 @@ Montant moyen estimé des dépenses annuelles d'énergie pour un usage standard 
 
 Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : georisques.gouv.fr.`,
   },
+  {
+    id: "10",
+    slug: "maison-ville-marines",
+    title: "Maison de ville 3 pièces - Cœur de Marines",
+    type: "maison",
+    city: "Marines",
+    postalCode: "95640",
+    price: 178500,
+    surface: 41.73,
+    rooms: 3,
+    bedrooms: 2,
+    bathrooms: 0,
+    showerRooms: 1,
+    toilets: 1,
+    landSurface: undefined,
+    parking: 2,
+    features: [
+      "Mitoyenne 1 côté",
+      "Cœur de village",
+      "Terrasse 27 m²",
+      "Cave",
+      "Sous-sol",
+      "Double vitrage bois",
+      "Chauffage réversible",
+      "Chauffe-eau thermodynamique",
+      "Cuisine aménagée",
+      "Tout à l'égout",
+      "2 stationnements extérieurs",
+      "Tout à pied",
+    ],
+    dpe: "E",
+    ges: "B",
+    reference: "VM39050",
+    mandate: "",
+    mainImage: "/biens/maison-marine/ext.jpeg",
+    images: [
+      "/biens/maison-marine/ext.jpeg",
+      "/biens/maison-marine/cuisine.jpeg",
+      "/biens/maison-marine/cuisine2.jpeg",
+      "/biens/maison-marine/chambre.jpeg",
+      "/biens/maison-marine/chambre2.jpeg",
+      "/biens/maison-marine/terrasse.jpeg",
+    ],
+    address: "19 Rue Jean Jaurès, Marines 95640",
+    status: "disponible",
+    shortDescription:
+      "Maison de ville pleine de charme en plein cœur de Marines. 3 pièces, 42 m², terrasse 27 m², cave. Idéale premier achat ou investissement. Tout à pied !",
+    description: `Maison de ville 3 pièces - Cœur de Marines - Tout à pied !
+
+Opportunité au centre de Marines : une maison de ville pleine de charme, idéale pour un premier achat, un pied-à-terre ou un investissement.
+
+En plein cœur du village, vous faites tout à pied : commerces, services, vie locale... et la gare est à seulement 10 minutes.
+
+La maison se compose de :
+
+RDC : une pièce de vie avec coin cuisine, entrée sur rue et seconde entrée côté terrasse pour profiter d'un extérieur cosy aux beaux jours.
+
+1er étage : une chambre confortable avec une salle d'eau.
+
+2ème étage : une deuxième chambre, parfaite pour un espace nuit, bureau ou chambre d'amis.
+
+Une cave avec accès extérieur et intérieur, idéale pour le rangement, buanderie ou vos belles bouteilles.
+
+Format pratique, emplacement premium, extérieur apprécié : un bien qui coche beaucoup de cases dans un petit volume bien optimisé.
+
+À visiter sans tarder.
+
+Honoraires à la charge du vendeur.
+
+Classe énergie E, Classe climat B.
+
+Montant estimé des dépenses annuelles d'énergie pour un usage standard : entre 1 030 € et 1 450 € sur les années 2021, 2022 et 2023 (abonnements compris).
+
+Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : georisques.gouv.fr.`,
+  },
 ];
 
 export function getPropertyBySlug(slug: string): Property | undefined {
