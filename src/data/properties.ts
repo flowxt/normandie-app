@@ -732,6 +732,84 @@ Montant estimé des dépenses annuelles d'énergie pour un usage standard : entr
 
 Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : georisques.gouv.fr.`,
   },
+  {
+    id: "11",
+    slug: "maison-familiale-piscine-hebecourt",
+    title: "Maison familiale avec piscine et grand terrain - Hébécourt",
+    type: "maison",
+    city: "Hébécourt",
+    postalCode: "27150",
+    price: 499000,
+    surface: 173.47,
+    rooms: 7,
+    bedrooms: 4,
+    bathrooms: 1,
+    showerRooms: 1,
+    toilets: 2,
+    landSurface: 2023,
+    parking: 2,
+    features: [
+      "Piscine",
+      "Terrain 2 023 m²",
+      "Terrasse 60 m²",
+      "Séjour 90 m²",
+      "Suite parentale avec dressing",
+      "Cuisine américaine équipée",
+      "Garage",
+      "Climatisation réversible",
+      "Construction 2011",
+      "Excellent état",
+      "Vue campagne",
+      "Semi plain-pied",
+    ],
+    dpe: "B",
+    ges: "A",
+    reference: "VM40149",
+    mandate: "",
+    mainImage: "/biens/maison-piscine/ext-1.jpg",
+    images: [
+      "/biens/maison-piscine/ext-1.jpg",
+      "/biens/maison-piscine/sejour.jpg",
+      "/biens/maison-piscine/salon.jpg",
+      "/biens/maison-piscine/volume.jpg",
+      "/biens/maison-piscine/cuisine.jpg",
+      "/biens/maison-piscine/kitchen.jpg",
+      "/biens/maison-piscine/jardin-ext.jpg",
+      "/biens/maison-piscine/piscine.jpg",
+      "/biens/maison-piscine/ext2.jpg",
+      "/biens/maison-piscine/ext3.jpg",
+      "/biens/maison-piscine/suite.jpg",
+      "/biens/maison-piscine/sdeau.jpg",
+      "/biens/maison-piscine/chambre.jpg",
+      "/biens/maison-piscine/chambre2.jpg",
+      "/biens/maison-piscine/chbre.jpg",
+      "/biens/maison-piscine/sdb.jpg",
+      "/biens/maison-piscine/sdb2.jpg",
+    ],
+    address: "3 Rue de la Vallée Louvet, Hébécourt 27150",
+    status: "disponible",
+    shortDescription:
+      "Coup de cœur à 15 min de Gisors ! Maison familiale de 2011, 173 m², 4 chambres, piscine, terrain 2 023 m². Séjour lumineux de 90 m², terrasse 60 m². DPE B.",
+    description: `Coup de cœur à la campagne – Maison familiale avec piscine et grand terrain
+
+À seulement 15 minutes de Gisors, en pleine campagne et dans un environnement calme et verdoyant, venez découvrir cette belle maison familiale construite en 2011, idéale pour les amoureux d'espace et de tranquillité.
+
+Vous serez immédiatement séduits par ses beaux volumes avec 188 m² au sol, dont un vaste séjour lumineux de 85 m² avec cuisine américaine entièrement équipée, ouvert sur une terrasse et un agréable jardin, parfait pour recevoir famille et amis.
+
+La maison propose 4 chambres, dont une suite parentale au rez-de-chaussée avec dressing et salle d'eau. À l'étage, vous trouverez trois autres chambres, une salle de bain ainsi qu'un grand dégagement pouvant faire office de salle de jeux, bureau ou espace détente.
+
+Un garage ainsi que plusieurs possibilités de stationnement viennent compléter les prestations.
+
+Aux beaux jours, vous profiterez pleinement de la piscine et du grand terrain de 2 023 m², offrant un cadre de vie paisible et privilégié.
+
+Que ce soit pour votre résidence principale ou pour une résidence secondaire, cette maison possède tous les atouts pour vous séduire.
+
+Classe énergie B, Classe climat A.
+
+Montant estimé des dépenses annuelles d'énergie pour un usage standard : entre 1 490 € et 2 100 € sur les années 2021, 2022 et 2023 (abonnements compris).
+
+Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : georisques.gouv.fr.`,
+  },
 ];
 
 export function getPropertyBySlug(slug: string): Property | undefined {
