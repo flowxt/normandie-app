@@ -42,7 +42,7 @@ function PropertyDetail({ property }: { property: Property }) {
   return (
     <>
       {/* Header avec image principale */}
-      <section className="relative pt-32 pb-8 bg-gray-100">
+      <section className="relative pt-32 pb-10 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
           <motion.nav
@@ -71,7 +71,7 @@ function PropertyDetail({ property }: { property: Property }) {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </li>
-              <li className="text-gray-900 font-medium truncate max-w-[200px]">
+              <li className="text-gray-900 font-medium truncate max-w-xs sm:max-w-md">
                 {property.title}
               </li>
             </ol>
@@ -84,51 +84,50 @@ function PropertyDetail({ property }: { property: Property }) {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="relative h-[400px] md:h-[500px] lg:h-[600px]">
+            <div className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
               <ImageCarousel images={property.images} alt={property.title} />
               
-              {/* Badges */}
-              <div className="absolute top-6 left-6 flex flex-wrap gap-3 z-20 pointer-events-none">
-                <span className="px-4 py-2 bg-[#1e3771] text-white font-bold rounded-xl shadow-lg">
+              {/* Badges type */}
+              <div className="absolute top-4 left-4 sm:top-6 sm:left-6 flex flex-wrap gap-3 z-20 pointer-events-none">
+                <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-[#1e3771] text-white font-bold rounded-xl shadow-lg text-sm sm:text-base">
                   {property.type === "maison" ? "Maison" : property.type === "appartement" ? "Appartement" : property.type === "terrain" ? "Terrain" : "Bien"}
                 </span>
                 {property.status === "sous-compromis" && (
-                  <span className="px-4 py-2 bg-amber-500 text-white font-bold rounded-xl shadow-lg">
+                  <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-amber-500 text-white font-bold rounded-xl shadow-lg text-sm sm:text-base">
                     Sous compromis
                   </span>
                 )}
               </div>
+            </div>
 
-              {/* Prix et DPE */}
-              <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between z-20 pointer-events-none">
-                <div className="bg-white/95 backdrop-blur-md rounded-2xl px-6 py-3 md:px-8 md:py-4 shadow-xl">
-                  <div className="text-2xl md:text-4xl lg:text-5xl font-bold text-[#1e3771]">
-                    {formatPrice(property.price)}
-                  </div>
-                  <div className="text-gray-500 text-xs md:text-sm">Honoraires à la charge du vendeur</div>
+            {/* Prix et DPE — EN DESSOUS du carrousel, pas en superposition */}
+            <div className="flex items-center justify-between mt-4 gap-3 flex-wrap">
+              <div className="bg-white rounded-2xl px-5 py-3 shadow-md border border-gray-100">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1e3771]">
+                  {formatPrice(property.price)}
                 </div>
-
-                {/* DPE/GES - uniquement si applicable */}
-                {property.dpe !== "N/A" && (
-                  <div className="flex gap-2">
-                    <div className={`${dpeColors[property.dpe]} text-white font-bold px-3 py-2 md:px-4 md:py-3 rounded-xl shadow-lg text-center`}>
-                      <div className="text-xl md:text-2xl">{property.dpe}</div>
-                      <div className="text-xs opacity-80">DPE</div>
-                    </div>
-                    <div className={`${dpeColors[property.ges]} text-white font-bold px-3 py-2 md:px-4 md:py-3 rounded-xl shadow-lg text-center`}>
-                      <div className="text-xl md:text-2xl">{property.ges}</div>
-                      <div className="text-xs opacity-80">GES</div>
-                    </div>
-                  </div>
-                )}
+                <div className="text-gray-500 text-xs sm:text-sm">Honoraires à la charge du vendeur</div>
               </div>
+
+              {property.dpe !== "N/A" && (
+                <div className="flex gap-2 shrink-0">
+                  <div className={`${dpeColors[property.dpe]} text-white font-bold px-4 py-3 rounded-xl shadow-md text-center`}>
+                    <div className="text-xl sm:text-2xl">{property.dpe}</div>
+                    <div className="text-xs opacity-80">DPE</div>
+                  </div>
+                  <div className={`${dpeColors[property.ges]} text-white font-bold px-4 py-3 rounded-xl shadow-md text-center`}>
+                    <div className="text-xl sm:text-2xl">{property.ges}</div>
+                    <div className="text-xs opacity-80">GES</div>
+                  </div>
+                </div>
+              )}
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Contenu principal */}
-      <section className="py-16 bg-white">
+      <section className="pt-10 pb-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Colonne principale */}
@@ -138,9 +137,9 @@ function PropertyDetail({ property }: { property: Property }) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="mb-8"
+                className="mb-10"
               >
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
                   {property.title}
                 </h1>
                 <div className="flex items-center gap-2 text-gray-600 text-lg">
@@ -334,7 +333,7 @@ function PropertyDetail({ property }: { property: Property }) {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 }}
-                className="sticky top-32"
+                className="sticky top-36"
               >
                 {/* Card Contact */}
                 <div className="bg-gradient-to-br from-[#1e3771] to-[#0d6c8a] rounded-3xl p-8 text-white shadow-xl mb-6">
@@ -354,13 +353,13 @@ function PropertyDetail({ property }: { property: Property }) {
                       <span className="font-semibold">06 62 15 57 57</span>
                     </a>
                     <a
-                      href="mailto:contact@exp-gisors.fr"
+                      href="mailto:contact@immo-vexin-normandie.fr"
                       className="flex items-center gap-3 bg-white/10 backdrop-blur-md rounded-xl px-4 py-3 hover:bg-white/20 transition-colors"
                     >
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
-                      <span className="font-semibold">contact@exp-gisors.fr</span>
+                      <span className="font-semibold text-sm">contact@immo-vexin-normandie.fr</span>
                     </a>
                   </div>
 
