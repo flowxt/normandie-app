@@ -810,6 +810,71 @@ Montant estimé des dépenses annuelles d'énergie pour un usage standard : entr
 
 Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : georisques.gouv.fr.`,
   },
+  {
+    id: "12",
+    slug: "appartement-t2-argenteuil",
+    title: "Appartement T2 lumineux - Argenteuil",
+    type: "appartement",
+    city: "Argenteuil",
+    postalCode: "95100",
+    price: 149000,
+    surface: 45,
+    rooms: 2,
+    bedrooms: 1,
+    bathrooms: 0,
+    showerRooms: 1,
+    toilets: 1,
+    landSurface: undefined,
+    parking: 0,
+    features: [
+      "Lumineux",
+      "1er étage",
+      "Cuisine américaine aménagée",
+      "Climatisation réversible",
+      "Double vitrage PVC",
+      "Placard de rangement",
+      "Vue dégagée",
+      "Exposition Sud-Est",
+      "Copropriété bien entretenue",
+      "Pierre",
+      "Proximité commerces",
+      "Quartier Le Marais",
+    ],
+    dpe: "G",
+    ges: "D",
+    reference: "VA33721",
+    mandate: "18975",
+    mainImage: "/biens/maison-mars26/salon.jpeg",
+    images: [
+      "/biens/maison-mars26/salon.jpeg",
+      "/biens/maison-mars26/piece.jpeg",
+      "/biens/maison-mars26/cuisine.jpeg",
+      "/biens/maison-mars26/entree.jpeg",
+      "/biens/maison-mars26/sdb.jpeg",
+      "/biens/maison-mars26/mur.jpeg",
+    ],
+    address: "18 Rue Baratier, Argenteuil 95100",
+    status: "disponible",
+    shortDescription:
+      "Appartement T2 lumineux de 45 m² au 1er étage, quartier Le Marais à Argenteuil. Cuisine américaine, climatisation réversible, vue dégagée. Idéal premier achat ou investissement.",
+    description: `Appartement 2 pièces – 45 m² – Lumineux – 1er étage
+
+Dans le quartier recherché et agréable du Marais à Argenteuil, à proximité immédiate des commerces et dans un environnement calme, découvrez cet appartement de 45 m² situé au premier étage d'une copropriété bien entretenue.
+
+Dès l'entrée, vous accédez à une cuisine ouverte spacieuse de 11,35 m², permettant aisément d'y installer un espace repas. Elle s'ouvre sur un salon séjour lumineux, offrant un cadre de vie convivial et confortable.
+
+L'espace nuit se compose d'une chambre, ainsi que d'une salle d'eau avec WC. Un placard de rangement dans le dégagement vient compléter l'ensemble, apportant un vrai plus en termes de fonctionnalité.
+
+L'appartement est en bon état général et bénéficie d'une belle luminosité tout au long de la journée.
+
+Un bien idéal pour un premier achat ou un investissement locatif, dans un secteur pratique et agréable à vivre.
+
+Taxe foncière : 1 517 €/an.
+
+Classe énergie G, Classe climat D - Logement à consommation énergétique excessive.
+
+Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : georisques.gouv.fr.`,
+  },
 ];
 
 export function getPropertyBySlug(slug: string): Property | undefined {
