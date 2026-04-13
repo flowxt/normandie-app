@@ -26,14 +26,11 @@ export const metadata: Metadata = {
   authors: [{ name: "Vincent Leclerc - eXp Realty" }],
   creator: "Vincent Leclerc - eXp Realty",
   publisher: "eXp Realty",
-  metadataBase: new URL("https://immo-vexin-normandie.fr"),
-  alternates: {
-    canonical: "https://immo-vexin-normandie.fr",
-  },
+  metadataBase: new URL("https://www.immo-vexin-normandie.fr"),
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://immo-vexin-normandie.fr",
+    url: "https://www.immo-vexin-normandie.fr",
     siteName: "Vincent Leclerc - Conseiller Immobilier eXp Realty",
     title: "eXp Realty Gisors | Vincent Leclerc - Conseiller Immobilier",
     description:
@@ -88,8 +85,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     name: "Vincent Leclerc - eXp Realty",
-    image: "https://immo-vexin-normandie.fr/interieur.png",
-    url: "https://immo-vexin-normandie.fr",
+    image: "https://www.immo-vexin-normandie.fr/interieur.png",
+    url: "https://www.immo-vexin-normandie.fr",
     telephone: "+33662155757",
     address: {
       "@type": "PostalAddress",

@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { getAllProperties } from "@/data/properties";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://immo-vexin-normandie.fr";
+  const baseUrl = "https://www.immo-vexin-normandie.fr";
 
   // Pages statiques
   const staticPages = [
