@@ -53,9 +53,9 @@ export default function ImageCarousel({ images, alt }: ImageCarouselProps) {
   if (images.length === 0) return null;
 
   return (
-    <div className="relative w-full h-full">
+    <div className="relative w-full flex flex-col">
       {/* Image principale */}
-      <div className="relative w-full h-full overflow-hidden rounded-3xl">
+      <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden rounded-3xl">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={currentIndex}

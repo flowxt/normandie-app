@@ -84,7 +84,7 @@ function PropertyDetail({ property }: { property: Property }) {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
+            <div className="relative">
               <ImageCarousel images={property.images} alt={property.title} />
               
               {/* Badges type */}
